@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusFix AI — Visual Maintenance & Resolution Intelligence</title>
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --card-bg: #151D2C;
+      --card-border: #232F45;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --primary: #38BDF8;
+      --primary-hover: #0284C7;
+      --emerald: #10B981;
+      --amber: #F59E0B;
+      --rose: #F43F5E;
+      --indigo: #6366F1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+    
+    /* Header */
+    header { background: #0E1626; border-bottom: 1px solid var(--card-border); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon { width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #0284C7, #6366F1); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
+    .brand-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+    .brand-tag { font-size: 11px; color: var(--text-muted); }
+    .badge-ai { background: rgba(56, 189, 248, 0.15); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: bold; margin-left: 6px; }
+
+    /* Nav Tabs */
+    .nav-tabs { display: flex; background: #131C2E; border: 1px solid var(--card-border); border-radius: 12px; padding: 4px; gap: 4px; }
+    .tab-btn { background: transparent; border: none; color: var(--text-muted); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .tab-btn:hover { color: var(--text-main); background: rgba(255,255,255,0.05); }
+    .tab-btn.active { background: var(--primary); color: #041426; box-shadow: 0 2px 10px rgba(56, 189, 248, 0.3); }
+
+    /* Main Container */
+    main { flex: 1; max-width: 1280px; width: 100%; margin: 0 auto; padding: 24px; }
+    .view-panel { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .view-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Layout Cards */
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; margin-bottom: 20px; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .card-title { font-size: 16px; font-weight: 700; color: #FFF; display: flex; align-items: center; gap: 8px; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px; border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; text-decoration: none; }
+    .btn-primary { background: var(--primary); color: #041426; }
+    .btn-primary:hover { background: #7DD3FC; transform: translateY(-1px); }
+    .btn-secondary { background: #232F45; color: var(--text-main); border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-success { background: var(--emerald); color: white; }
+    .btn-success:hover { background: #34D399; }
+    .btn-danger { background: var(--rose); color: white; }
+
+    /* Tags & Pills */
+    .tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+    .tag-p1 { background: rgba(244, 63, 94, 0.2); color: #FDA4AF; border: 1px solid rgba(244, 63, 94, 0.4); }
+    .tag-p2 { background: rgba(245, 158, 11, 0.2); color: #FCD34D; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .tag-p3 { background: rgba(56, 189, 248, 0.2); color: #BAE6FD; border: 1px solid rgba(56, 189, 248, 0.4); }
+    .tag-dept { background: #1E293B; color: #E2E8F0; border: 1px solid #334155; }
+
+    /* Grid layouts */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    /* Presets Strip */
+    .preset-chip { background: #1B2436; border: 1px solid #2B3A54; padding: 8px 14px; border-radius: 8px; color: #CBD5E1; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; }
+    .preset-chip:hover { border-color: var(--primary); color: var(--primary); background: rgba(56, 189, 248, 0.08); }
+
+    /* Image Preview Box */
+    .preview-box { height: 260px; background: #0F172A; border: 2px dashed #2B3A54; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .preview-box img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* Incident Item */
+    .incident-row { background: #172033; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; transition: all 0.15s; }
+    .incident-row:hover { border-color: #38BDF8; transform: translateX(3px); }
+    
+    /* Modal */
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+    .modal-overlay.active { display: flex; }
+    .modal-card { background: #151D2C; border: 1px solid #2B3A54; border-radius: 16px; width: 100%; max-width: 620px; padding: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+
+    /* Before/After Split Comparison Slider */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: #0F172A;
+      user-select: none;
+    }
+    .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+    .slider-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      clip-path: inset(0 50% 0 0);
+      pointer-events: none;
+      transition: none;
+    }
+    .slider-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--primary);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+    .slider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: #0E1626;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+    .slider-range-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 10;
+      margin: 0;
+    }
+    .slider-label {
+      position: absolute;
+      top: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .slider-label-before {
+      left: 12px;
+      background: rgba(244, 63, 94, 0.25);
+      color: #FDA4AF;
+      border: 1px solid rgba(244, 63, 94, 0.5);
+    }
+    .slider-label-after {
+      right: 12px;
+      background: rgba(16, 185, 129, 0.25);
+      color: #6EE7B7;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+    }
+    .defect-delta-box {
+      position: absolute;
+      top: 25%;
+      left: 32%;
+      width: 36%;
+      height: 48%;
+      border: 2px dashed var(--emerald);
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      pointer-events: none;
+      display: flex;
+      align-items: flex-end;
+      padding: 6px;
+    }
+    .defect-delta-box span {
+      background: var(--emerald);
+      color: #041426;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Campus Digital Twin Blueprint */
+    .blueprint-room {
+      background: #0E1626;
+      border: 1px solid #232F45;
+      border-radius: 10px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .blueprint-room:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .blueprint-room-p2 {
+      border-color: rgba(245, 158, 11, 0.6);
+      background: rgba(245, 158, 11, 0.08);
+    }
+    .blueprint-room-p1 {
+      border-color: rgba(244, 63, 94, 0.6);
+      background: rgba(244, 63, 94, 0.08);
+    }
+    .room-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .room-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2px;
+    }
+    .room-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .beacon {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .beacon-ok { background: var(--emerald); box-shadow: 0 0 6px var(--emerald); }
+    .beacon-warn { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+    .beacon-danger { background: var(--rose); box-shadow: 0 0 10px var(--rose); }
+    .pulse {
+      animation: beaconPulse 1.4s infinite;
+    }
+    @keyframes beaconPulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Laser Scanner Animation */
+    .qr-laser-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #38BDF8, transparent);
+      box-shadow: 0 0 12px #38BDF8;
+      animation: scanLaser 2s infinite ease-in-out;
+    }
+    @keyframes scanLaser {
+      0% { top: 15%; }
+      50% { top: 85%; }
+      100% { top: 15%; }
+    }
+
+    /* Soundwave Visualizer */
+    .wave-bar {
+      display: inline-block;
+      width: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      animation: soundWave 0.8s infinite ease-in-out;
+    }
+    .wave-bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+    .wave-bar:nth-child(2) { height: 18px; animation-delay: 0.3s; }
+    .wave-bar:nth-child(3) { height: 26px; animation-delay: 0.2s; }
+    .wave-bar:nth-child(4) { height: 14px; animation-delay: 0.4s; }
+    .wave-bar:nth-child(5) { height: 24px; animation-delay: 0.15s; }
+    .wave-bar:nth-child(6) { height: 12px; animation-delay: 0.35s; }
+    .wave-bar:nth-child(7) { height: 20px; animation-delay: 0.25s; }
+    .wave-bar:nth-child(8) { height: 8px; animation-delay: 0.45s; }
+    @keyframes soundWave {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+
+    /* Floating Toast Alerts */
+    .toast-item {
+      background: #141E30;
+      border: 1px solid #23344F;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+    @keyframes toastIn {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      header { flex-direction: column; gap: 12px; }
+      .nav-tabs { width: 100%; justify-content: space-around; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">CF</div>
+      <div>
+        <div class="brand-title">CampusFix <span class="badge-ai">AI</span></div>
+        <div class="brand-tag">Visual Campus Maintenance & Resolution Intelligence</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('student')">📸 Student Reporter</button>
+      <button class="tab-btn" onclick="switchTab('maintenance')">🛠️ Maintenance Queue</button>
+      <button class="tab-btn" onclick="switchTab('verification')">🔍 AI Verification Hub</button>
+      <button class="tab-btn" onclick="switchTab('admin')">📊 Admin Dashboard</button>
+    </div>
+  </header>
+
+  <!-- MAIN CANVAS -->
+  <main>
+
+    <!-- ======================================================== -->
+    <!-- 1. STUDENT REPORTER VIEW                                 -->
+    <!-- ======================================================== -->
+    <div id="view-student" class="view-panel active">
+      <div class="card" style="border-left: 4px solid var(--primary);">
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">"Don't fill a complaint form. Show the problem."</h2>
+        <p style="color: var(--text-muted); font-size: 13px;">Snap a photo of the maintenance fault. The Multimodal Vision engine will classify the object, detect the defect, suggest priority, and auto-route to the right campus department.</p>
+      </div>
+
+      <!-- Mode Selector -->
+      <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+        <button id="mode-single-btn" class="btn btn-primary" onclick="setReporterMode('single')">
+          📷 Single Defect Mode
+        </button>
+        <button id="mode-room-btn" class="btn btn-secondary" onclick="setReporterMode('room')">
+          🔍 Room Scan Mode (Multi-Defect Audit)
+        </button>
+      </div>
+
+      <!-- Quick Preset Buttons for Live Demo -->
+      <div style="margin-bottom: 20px;">
+        <div style="font-size: 12px; font-weight: bold; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase;">
+          ⚡ 1-Click Live Demo Scenarios:
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <div class="preset-chip" onclick="loadDemoScenario('fan_broken')">
+            <span>🌪️</span> <strong>Room 204: Broken Fan</strong> (Triggers Auto-Routing & Duplicate Check)
+          </div>
+          <div class="preset-chip" onclick="loadDemoScenario('room_scan')">
+            <span>🏫</span> <strong>Room 204: Wide Scan</strong> (Detects 3 Defects in 1 Pass)
+          </div>
+          <div class="preset-chip" onclick="loadDemoScenario('water_leak')">
+            <span>🚰</span> <strong>Block C: High-Pressure Leak</strong> (Plumbing P1 Hazard)
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo Upload & Analysis Area -->
+      <div class="grid-2">
+        <!-- Left: Upload Box -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">1. Capture Evidence</span>
+            <span id="scan-mode-indicator" class="tag tag-p3">Single Mode</span>
+          </div>
+
+          <div id="dropzone" class="preview-box">
+            <div id="upload-placeholder" style="text-align: center; color: var(--text-muted); padding: 20px;">
+              <div style="font-size: 32px; margin-bottom: 8px;">📷</div>
+              <div style="font-weight: 600; color: #E2E8F0; font-size: 14px;">Select a Demo Scenario above</div>
+              <div style="font-size: 12px; margin-top: 4px;">or click to upload a custom image</div>
+              <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(event)">
+            </div>
+            <img id="imagePreview" src="" style="display:none;" alt="Incident Evidence">
+          </div>
+
+          <div style="margin-top: 14px; display: flex; gap: 10px;">
+            <input type="text" id="locationInput" placeholder="Location tag (e.g. Block B / Room 204)" value="Block B / Room 204" style="flex:1; background:#0F172A; border:1px solid #2B3A54; border-radius:8px; padding:10px 14px; color:white; font-size:13px;">
+            <button class="btn btn-primary" onclick="triggerAnalyze()">
+              🤖 Analyze with Vision AI
+            </button>
+          </div>
+
+          <!-- Quick Hardware / Multimodal Accel Controls -->
+          <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <button type="button" class="preset-chip" style="font-size: 11px; padding: 4px 10px; border-color: rgba(56, 189, 248, 0.4); color: var(--primary);" onclick="openQrScannerModal()">
+              🏷️ Scan Door Plaque (QR/NFC)
+            </button>
+            <button type="button" class="preset-chip" id="voice-memo-btn" style="font-size: 11px; padding: 4px 10px;" onclick="toggleVoiceMemo()">
+              🎙️ Add Voice Memo
+            </button>
+          </div>
+
+          <!-- Multimodal Voice Memo Panel -->
+          <div id="voice-memo-panel" style="display: none; background: #0E1626; border: 1px solid #23344F; border-radius: 8px; padding: 10px 14px; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 6px; cursor: pointer;" onclick="stopVoiceMemo()" title="Click to Stop">
+                <span id="voice-beacon" class="beacon beacon-danger pulse" style="cursor: pointer;"></span>
+                <span style="font-size: 11px; font-weight: 700; color: white;">Multimodal Audio Stream:</span>
+                <span id="voice-status-text" style="font-size: 11px; color: #FDA4AF; font-weight: 600;">Listening & transcribing...</span>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button type="button" id="voice-stop-btn" class="btn" style="padding: 4px 10px; font-size: 11px; background: #E11D48; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 4px;" onclick="stopVoiceMemo()">
+                  ⏹️ Stop Speech
+                </button>
+                <button type="button" onclick="closeVoiceMemo()" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 18px; padding: 0 4px; line-height: 1;" title="Cancel & Discard">&times;</button>
+              </div>
+            </div>
+            <div id="voice-waveform" class="audio-waveform" style="display: flex; align-items: center; justify-content: center; gap: 4px; height: 20px; margin-bottom: 6px;">
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+              <span class="wave-bar"></span><span class="wave-bar"></span>
+            </div>
+            <div id="voice-transcript-text" style="font-size: 11px; color: #E2E8F0; background: #090E17; border: 1px solid #1E293B; border-radius: 6px; padding: 6px 10px; font-style: italic;">
+              "Ceiling fan blade warped, making high-friction vibration noise in Room 204."
+            </div>
+          </div>
+
+          <!-- Reporter Role Selector -->
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid #1E293B;">
+            <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">👤 REPORTING AS:</span>
+            <div style="display: flex; gap: 6px;">
+              <button type="button" id="role-student-btn" class="preset-chip" style="padding: 4px 10px; font-size: 11px; background: rgba(56, 189, 248, 0.15); border-color: var(--primary); color: var(--primary);" onclick="setReporterRole('Student')">
+                🎓 Student
+              </button>
+              <button type="button" id="role-faculty-btn" class="preset-chip" style="padding: 4px 10px; font-size: 11px;" onclick="setReporterRole('Faculty / Staff')">
+                👨‍🏫 Faculty / Staff
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: AI Analysis Output -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">2. AI Vision Understanding</span>
+            <span id="ai-status-badge" class="tag tag-dept">Waiting for Input</span>
+          </div>
+
+          <div id="ai-output-empty" style="color: var(--text-muted); font-size: 13px; text-align: center; padding: 50px 20px;">
+            Select a demo scenario or upload a photo to see the zero-shot multimodal vision pipeline in action.
+          </div>
+
+          <div id="ai-output-single" style="display: none;">
+            <div style="background: #0E1626; border: 1px solid #232F45; border-radius: 10px; padding: 16px; margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                <div>
+                  <h3 id="res-object" style="font-size: 16px; font-weight: bold; color: white;">Ceiling Fan</h3>
+                  <p id="res-defect" style="font-size: 13px; color: var(--rose); margin-top: 2px;">Bent blade & warped motor</p>
+                </div>
+                <span id="res-priority" class="tag tag-p2">P2 - High</span>
+              </div>
+              <p id="res-summary" style="font-size: 12px; color: #CBD5E1; line-height: 1.5; margin-top: 8px;">Technical inspection summary from vision model.</p>
+            </div>
+
+            <!-- INLINE DUPLICATE ADVISORY BANNER (NON-INTRUSIVE) -->
+            <div id="dup-inline-advisory" style="display: none; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 16px;">⚠️</span>
+                  <div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--amber);">Possible Duplicate Issue Active</div>
+                    <div style="font-size: 11px; color: #CBD5E1;" id="dup-inline-desc">Ticket CF-101 is already open for this fixture.</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px; border-color: var(--amber); color: var(--amber); white-space: nowrap;" onclick="openDuplicateModalFromAdvisory()">
+                  Review & Upvote
+                </button>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 16px;">
+              <div style="background: #0F172A; padding: 10px; border-radius: 8px; border: 1px solid #232F45;">
+                <div style="font-size: 11px; color: var(--text-muted);">AUTO-ROUTED DEPARTMENT</div>
+                <div id="res-dept" style="font-size: 13px; font-weight: bold; color: var(--primary); margin-top: 2px;">Electrical Maintenance</div>
+              </div>
+              <div style="background: #0F172A; padding: 10px; border-radius: 8px; border: 1px solid #232F45;">
+                <div style="font-size: 11px; color: var(--text-muted);">AI CONFIDENCE</div>
+                <div id="res-confidence" style="font-size: 13px; font-weight: bold; color: var(--emerald); margin-top: 2px;">96%</div>
+              </div>
+            </div>
+
+            <button id="submit-ticket-btn" class="btn btn-success" style="width: 100%;" onclick="submitSingleIncident()">
+              🚀 Dispatch Maintenance Ticket
+            </button>
+          </div>
+
+          <!-- Room Scan Output List -->
+          <div id="ai-output-room" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 13px; color: var(--primary); font-weight: bold;">3 Candidate Defects Identified</span>
+              <span class="tag tag-p3">Room Scan</span>
+            </div>
+            <div id="room-scan-checklist" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+              <!-- Items injected by JS -->
+            </div>
+            <button class="btn btn-success" style="width: 100%;" onclick="submitRoomScanBatch()">
+              ✅ Confirm & Dispatch All Selected Tasks
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- 2. MAINTENANCE QUEUE VIEW                                -->
+    <!-- ======================================================== -->
+    <div id="view-maintenance" class="view-panel">
+      <div class="card-header" style="margin-bottom: 16px;">
+        <div>
+          <h2 style="font-size: 20px; font-weight: 800;">Technician Work Orders</h2>
+          <p style="color: var(--text-muted); font-size: 13px;">View dispatched tasks with visual context. Upload post-repair photo evidence to trigger AI verification.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-secondary" onclick="loadMaintenanceTasks()">🔄 Refresh</button>
+        </div>
+      </div>
+
+      <div id="maintenance-tasks-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- 3. AI VERIFICATION HUB (THE STANDOUT HERO FEATURE)       -->
+    <!-- ======================================================== -->
+    <div id="view-verification" class="view-panel">
+      <div class="card" style="border-left: 4px solid var(--emerald);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 20px; font-weight: 800; color: white;">Before & After AI Resolution Inspector</h2>
+            <p style="color: var(--text-muted); font-size: 13px;">Zero phantom closures. The Vision AI compares original damage vs. post-repair photos to verify resolution before supervisor closure.</p>
+          </div>
+          <span class="tag tag-p3">Accountability Loop</span>
+        </div>
+      </div>
+
+      <!-- Active Verification Inspection Box -->
+      <div class="card" id="verification-inspector" style="display: none;">
+        <div class="card-header">
+          <div>
+            <span class="tag tag-dept" id="verif-task-id">CF-101</span>
+            <span style="font-size: 16px; font-weight: bold; margin-left: 8px;" id="verif-task-title">Ceiling Fan</span>
+          </div>
+          <span id="verif-status-badge" class="tag tag-p2">Awaiting Verification</span>
+        </div>
+
+        <!-- Inspection Mode Selector Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: #0E1626; padding: 8px 12px; border-radius: 8px; border: 1px solid #232F45;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Visual Diff Mode:</span>
+            <span class="tag tag-p3" id="verif-mode-tag">Interactive Split Slider</span>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button type="button" id="btn-mode-slider" class="preset-chip" style="font-size: 11px; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); border-color: var(--primary); color: var(--primary);" onclick="setVerifViewMode('slider')">
+              ⟷ Split Slider
+            </button>
+            <button type="button" id="btn-mode-split" class="preset-chip" style="font-size: 11px; padding: 4px 10px;" onclick="setVerifViewMode('split')">
+              ⊞ Side-by-Side
+            </button>
+            <button type="button" id="btn-toggle-bbox" class="preset-chip" style="font-size: 11px; padding: 4px 10px;" onclick="toggleBBoxOverlay()">
+              👁️ Defect Delta Highlight
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Draggable Split-Screen Slider -->
+        <div id="verif-slider-wrapper" style="margin-bottom: 20px;">
+          <div class="slider-container" id="sliderContainer">
+            <!-- Base Image (After) -->
+            <img id="slider-after-img" class="slider-img" src="" alt="After Repair">
+            <div class="slider-label slider-label-after">AFTER REPAIR (Fix Verified)</div>
+
+            <!-- Overlaid Clipped Image (Before) -->
+            <div class="slider-overlay" id="sliderOverlay">
+              <img id="slider-before-img" class="slider-img" src="" alt="Before Repair">
+              <div class="slider-label slider-label-before">BEFORE REPAIR (Damage)</div>
+            </div>
+
+            <!-- Bounding Box / Defect Delta Overlay -->
+            <div id="slider-defect-bbox" class="defect-delta-box" style="display: none;">
+              <span>AI Fix Delta: 100% Repaired</span>
+            </div>
+
+            <!-- Vertical Divider & Drag Handle -->
+            <div class="slider-divider" id="sliderDivider">
+              <div class="slider-handle">⟷</div>
+            </div>
+
+            <!-- Invisible range input covering container for effortless mouse/touch dragging -->
+            <input type="range" min="0" max="100" value="50" class="slider-range-input" id="sliderRangeInput" oninput="updateSliderPosition(this.value)">
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; color: var(--text-muted);">
+            <span>👈 Drag handle or slide across to reveal pixel-level repair overlay 👉</span>
+            <span id="slider-pct-label" style="font-weight: 700; color: var(--primary);">Split: 50% / 50%</span>
+          </div>
+        </div>
+
+        <!-- Side-by-Side Comparison (Toggled by setVerifViewMode) -->
+        <div id="verif-side-by-side" class="grid-2" style="margin-bottom: 20px; display: none;">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 12px; font-weight: bold; color: var(--rose);">STEP 1: BEFORE REPAIR (The Incident)</span>
+              <span style="font-size: 11px; color: var(--text-muted);">Initial Evidence</span>
+            </div>
+            <div class="preview-box" style="border-color: rgba(244, 63, 94, 0.4);">
+              <img id="verif-before-img" src="" alt="Before Repair">
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 12px; font-weight: bold; color: var(--emerald);">STEP 2: AFTER REPAIR (Physical Fix)</span>
+              <span style="font-size: 11px; color: var(--text-muted);">Technician Upload</span>
+            </div>
+            <div class="preview-box" style="border-color: rgba(16, 185, 129, 0.4);">
+              <img id="verif-after-img" src="" alt="After Repair">
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Verification Scorecard -->
+        <div style="background: #0E1626; border: 1px solid #232F45; border-radius: 12px; padding: 18px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 18px;">🤖</span>
+              <span style="font-weight: 700; font-size: 14px; color: white;">Multimodal AI Comparative Diff Result:</span>
+            </div>
+            <span id="verif-score-pill" class="tag tag-p3" style="background: rgba(16, 185, 129, 0.2); color: #34D399; font-size: 13px; font-weight: 800; border-color: rgba(16, 185, 129, 0.5);">
+              96% Resolution Confidence ✅
+            </span>
+          </div>
+
+          <div style="font-size: 13px; color: #CBD5E1; line-height: 1.6; margin-bottom: 10px;" id="verif-details">
+            BEFORE: Fan exhibited severe mechanical blade deformation. AFTER: Replaced with balanced 3-blade unit securely anchored to ceiling mount.
+          </div>
+
+          <div style="display: flex; gap: 14px; font-size: 12px; color: var(--text-muted);">
+            <div>🏢 <strong>Environment Match:</strong> <span style="color:var(--emerald);">Confirmed (Room 204)</span></div>
+            <div>⚡ <strong>Residual Hazard:</strong> <span style="color:var(--emerald);">None Observed</span></div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <button class="btn btn-secondary" onclick="reverifyCurrent()">
+            🔄 Re-Evaluate AI Diff
+          </button>
+          <button class="btn btn-success" onclick="approveCurrentResolution()">
+            ✍️ Supervisor Sign-Off & Close Ticket
+          </button>
+        </div>
+      </div>
+
+      <!-- Pending Verifications List -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Pending Supervisor Verifications</span>
+          <span class="tag tag-p3" id="pending-verif-count">0 items</span>
+        </div>
+        <div id="pending-verifications-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- 4. ADMIN ANALYTICS DASHBOARD                             -->
+    <!-- ======================================================== -->
+    <div id="view-admin" class="view-panel">
+      <div class="card-header" style="margin-bottom: 20px;">
+        <div>
+          <h2 style="font-size: 22px; font-weight: 800;">Campus Infrastructure Health & Analytics</h2>
+          <p style="color: var(--text-muted); font-size: 13px;">Live operational KPIs, department backlog, and accreditation proof logs.</p>
+        </div>
+        <button class="btn btn-secondary" onclick="exportAccreditationReport()">
+          📄 Export Accreditation Audit (PDF / CSV)
+        </button>
+      </div>
+
+      <!-- 4 KPI Cards -->
+      <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="card" style="margin-bottom:0;">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Total Incidents</div>
+          <div style="font-size: 26px; font-weight: 800; color: white; margin-top: 4px;" id="kpi-total">0</div>
+          <div style="font-size: 11px; color: var(--primary); margin-top: 2px;">Evidence-backed</div>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Active Backlog</div>
+          <div style="font-size: 26px; font-weight: 800; color: var(--amber); margin-top: 4px;" id="kpi-active">0</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">In-progress repairs</div>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Verified Resolved</div>
+          <div style="font-size: 26px; font-weight: 800; color: var(--emerald); margin-top: 4px;" id="kpi-resolved">0</div>
+          <div style="font-size: 11px; color: var(--emerald); margin-top: 2px;" id="kpi-rate">0% Verified</div>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Duplicate Flood Avoided</div>
+          <div style="font-size: 26px; font-weight: 800; color: var(--indigo); margin-top: 4px;" id="kpi-duplicates">0</div>
+          <div style="font-size: 11px; color: var(--indigo); margin-top: 2px;">Merged complaints</div>
+        </div>
+      </div>
+
+      <!-- 5. INTERACTIVE CAMPUS DIGITAL TWIN (HERO ADMIN FEATURE) -->
+      <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--primary);">
+        <div class="card-header" style="margin-bottom: 12px;">
+          <div>
+            <span class="card-title">🗺️ Campus Digital Twin — Real-Time Spatial Hazard Heatmap</span>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Interactive telemetry map of Academic Block B (Classrooms) & Block C (Sanitary & Utilities)</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px; background: #0F172A; padding: 6px 12px; border-radius: 8px; border: 1px solid #232F45;">
+              <span style="font-size: 11px; color: var(--text-muted); font-weight: 700;">CAMPUS HEALTH:</span>
+              <span style="font-size: 12px; font-weight: 800; color: var(--emerald);" id="campus-health-pct">94.2% READY</span>
+            </div>
+            <div style="display: flex; gap: 4px;">
+              <button type="button" class="preset-chip" style="padding: 4px 10px; font-size: 11px; background: rgba(56, 189, 248, 0.15); border-color: var(--primary); color: var(--primary);">Level 2 (Active)</button>
+              <button type="button" class="preset-chip" style="padding: 4px 10px; font-size: 11px;" onclick="showToast('Level 1 Telemetry: All 12 fixtures nominal')">Level 1</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Blueprint Floor Plan Grid -->
+        <div style="background: #090D16; border: 1px solid #1E293B; border-radius: 12px; padding: 18px; position: relative; overflow-x: auto;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;">
+            <span>NORTH WING (BLOCK B - COMPUTER SCIENCE & RESEARCH LABS)</span>
+            <span>SOUTH WING (BLOCK C - UTILITIES & RESTROOMS)</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr) 40px repeat(2, 1fr); gap: 12px; min-width: 760px;">
+            <!-- Room 201 -->
+            <div class="blueprint-room" onclick="openRoomDetails('Room 201', 'Lecture Hall B', 'Normal', 0, 'Lighting, AV and HVAC systems operating nominal.')">
+              <div class="room-hdr"><span>RM 201</span><span class="beacon beacon-ok"></span></div>
+              <div class="room-title">Lecture Hall B</div>
+              <div class="room-meta">Cap: 60 • HVAC OK</div>
+            </div>
+
+            <!-- Room 202 -->
+            <div class="blueprint-room" onclick="openRoomDetails('Room 202', 'IoT & Embedded Lab', 'Normal', 0, 'Workstations and 3-phase power online.')">
+              <div class="room-hdr"><span>RM 202</span><span class="beacon beacon-ok"></span></div>
+              <div class="room-title">IoT Systems Lab</div>
+              <div class="room-meta">Sensors Active</div>
+            </div>
+
+            <!-- Room 203 -->
+            <div class="blueprint-room" onclick="openRoomDetails('Room 203', 'AI Research Center', 'Normal', 0, 'Server rack cooling & ambient lighting calibrated.')">
+              <div class="room-hdr"><span>RM 203</span><span class="beacon beacon-ok"></span></div>
+              <div class="room-title">AI Research Lab</div>
+              <div class="room-meta">Servers Online</div>
+            </div>
+
+            <!-- Room 204: HAZARD ACTIVE -->
+            <div class="blueprint-room blueprint-room-p2" onclick="openRoomDetails('Block B / Room 204', 'CS Classroom 204', 'P2 Warning', 1, 'Active Ticket: CF-101 / Ceiling fan deformed blade. Auto-routed to Electrical Dept.')">
+              <div class="room-hdr"><span>RM 204</span><span class="beacon beacon-warn pulse"></span></div>
+              <div class="room-title" style="color: var(--amber);">CS Room 204</div>
+              <div class="room-meta" style="color: #FCD34D;">⚠️ Active: Fan Fault</div>
+            </div>
+
+            <!-- Corridor / Walkway -->
+            <div style="background: #131B2C; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 10px; writing-mode: vertical-rl; letter-spacing: 2px; font-weight: 700;">
+              CORRIDOR
+            </div>
+
+            <!-- Restroom 2A: HAZARD CRITICAL -->
+            <div class="blueprint-room blueprint-room-p1" onclick="openRoomDetails('Block C / 2nd Fl Washroom', '2nd Floor Washroom', 'P1 Critical', 1, 'Active Ticket: CF-102 / Plumbing water leak. P1 high priority.')">
+              <div class="room-hdr"><span>WC-2A</span><span class="beacon beacon-danger pulse"></span></div>
+              <div class="room-title" style="color: var(--rose);">Washroom 2A</div>
+              <div class="room-meta" style="color: #FDA4AF;">🚨 P1 Water Leak</div>
+            </div>
+
+            <!-- Server & Utilities 2B -->
+            <div class="blueprint-room" onclick="openRoomDetails('Utility 2B', 'Power & Fiber Duct', 'Normal', 0, 'Backup UPS online. Clean telemetry.')">
+              <div class="room-hdr"><span>UTIL-2B</span><span class="beacon beacon-ok"></span></div>
+              <div class="room-title">Utility Duct</div>
+              <div class="room-meta">Power Grid Normal</div>
+            </div>
+          </div>
+
+          <!-- Room Detail Drawer (Injected by JS when a room is clicked) -->
+          <div id="room-detail-drawer" style="display: none; margin-top: 14px; background: #121A2A; border: 1px solid #28374E; border-radius: 8px; padding: 12px 16px; animation: fadeIn 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span id="room-drawer-title" style="font-size: 14px; font-weight: 700; color: white;">CS Room 204</span>
+                <span id="room-drawer-badge" class="tag tag-p2" style="margin-left: 8px;">P2 Warning</span>
+                <p id="room-drawer-desc" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Ceiling fan blade warped.</p>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="closeRoomDrawer()">Close</button>
+                <button type="button" class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;" onclick="switchTab('maintenance')">View in Maintenance Queue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Distribution & Recent Audits -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Department Workload Distribution</span>
+          </div>
+          <div id="dept-bars-container" style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Live Verifiable Audit Trail</span>
+            <span class="tag tag-dept">Immutable Log</span>
+          </div>
+          <div id="audit-trail-container" style="display: flex; flex-direction: column; gap: 8px; max-height: 280px; overflow-y: auto;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: DUPLICATE DETECTION PROMPT                        -->
+  <!-- ======================================================== -->
+  <div id="duplicate-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 24px;">⚠️</span>
+          <h3 style="font-size: 18px; font-weight: 800; color: var(--amber);">Possible Duplicate Detected!</h3>
+        </div>
+        <button type="button" onclick="dismissDuplicateModal()" style="background: none; border: none; color: var(--text-muted); font-size: 22px; cursor: pointer;">&times;</button>
+      </div>
+      <p style="font-size: 13px; color: #CBD5E1; line-height: 1.5; margin-bottom: 16px;">
+        Our spatial & visual similarity engine noticed that an active incident matching this defect is already open in the exact same location:
+      </p>
+
+      <div style="background: #0E1626; border: 1px solid #232F45; border-radius: 10px; padding: 14px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span class="tag tag-p3" id="dup-id">CF-101</span>
+          <span style="font-size: 12px; color: var(--text-muted);" id="dup-status">Status: In Progress</span>
+        </div>
+        <div style="font-weight: 700; font-size: 14px; color: white;" id="dup-title">Ceiling Fan - Bent Blade</div>
+        <div style="font-size: 12px; color: var(--primary); margin-top: 4px;" id="dup-location">Block B / Room 204</div>
+      </div>
+
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px;">
+        To prevent queue clutter and keep maintenance focused, you can <strong>Upvote & Subscribe</strong> to this ticket for instant repair alerts.
+      </p>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="btn btn-secondary" onclick="closeDuplicateModalAndProceed()">
+          Create Separate Ticket Anyway
+        </button>
+        <button class="btn btn-primary" onclick="confirmUpvoteDuplicate()">
+          👍 Upvote & Subscribe (Recommended)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: UPLOAD "AFTER" REPAIR PHOTO                       -->
+  <!-- ======================================================== -->
+  <div id="after-photo-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="card-header">
+        <h3 style="font-size: 18px; font-weight: 800; color: white;">Upload "After" Repair Evidence</h3>
+        <button onclick="closeAfterModal()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;">&times;</button>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+        To close this task, upload a photo of the completed repair. The Vision AI will compare before and after photos to verify the fix.
+      </p>
+
+      <div style="margin-bottom: 14px;">
+        <div style="font-size: 12px; color: var(--primary); font-weight: bold; margin-bottom: 8px;">⚡ DEMO PRESET:</div>
+        <button class="preset-chip" style="width: 100%; justify-content: center;" onclick="loadAfterPreset()">
+          ✅ Use Repaired Fan Evidence Photo (Room 204)
+        </button>
+      </div>
+
+      <input type="file" id="afterFileInput" accept="image/*" style="display:none;" onchange="handleAfterFileUpload(event)">
+
+      <div id="after-preview-box" class="preview-box" style="height: 180px; margin-bottom: 16px; cursor: pointer;" onclick="document.getElementById('afterFileInput').click()">
+        <span id="after-placeholder" style="color: var(--text-muted); font-size: 12px; text-align: center;">
+          📁 <strong>Click here to upload your own image</strong><br>
+          <span style="font-size: 11px; color: var(--primary);">(or click the Preset button above)</span>
+        </span>
+        <img id="after-img-preview" src="" style="display:none; width: 100%; height: 100%; object-fit: contain;" alt="After Repair">
+      </div>
+
+      <input type="text" id="technician-notes" placeholder="Technician Notes (e.g. Replaced 3-blade unit and motor bearing)" value="Replaced damaged fan blade with balanced 3-blade unit. Tested rotation." style="width:100%; background:#0F172A; border:1px solid #2B3A54; border-radius:8px; padding:10px 14px; color:white; font-size:13px; margin-bottom: 16px;">
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="btn btn-secondary" onclick="closeAfterModal()">Cancel</button>
+        <button class="btn btn-success" onclick="submitAfterPhoto()">
+          🔍 Run AI Verification & Submit
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: DOOR PLAQUE QR / NFC SCANNER                      -->
+  <!-- ======================================================== -->
+  <div id="qr-scanner-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px; text-align: center;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h3 style="font-size: 16px; font-weight: 800; color: white;">📷 Campus Door Plaque Scanner</h3>
+        <button type="button" onclick="closeQrModal()" style="background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer;">&times;</button>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+        Point camera at the classroom door RFID/QR plaque to auto-bind location telemetry:
+      </p>
+      
+      <!-- Scanner Viewport with Laser Beam Animation -->
+      <div style="width: 220px; height: 180px; margin: 0 auto 16px auto; background: #0A0F1A; border: 2px dashed var(--primary); border-radius: 12px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div style="font-size: 54px; opacity: 0.35;">🏷️</div>
+        <div style="position: absolute; inset: 16px; border: 2px solid rgba(56, 189, 248, 0.4); border-radius: 8px;"></div>
+        <div class="qr-laser-line"></div>
+      </div>
+
+      <div id="qr-scan-status" style="font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 14px;">
+        Targeting Room Plaque QR Tag...
+      </div>
+
+      <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" class="btn btn-secondary" onclick="closeQrModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="simulateScanPlaque('Block B / Room 204')">⚡ Detect Room 204</button>
+        <button type="button" class="btn btn-secondary" onclick="simulateScanPlaque('Block C / 2nd Fl Washroom')">⚡ Detect Washroom</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none;"></div>
+
+
+  <!-- ======================================================== -->
+  <!-- JAVASCRIPT APPLICATION LOGIC                             -->
+  <!-- ======================================================== -->
+  <script>
+    const API_BASE = window.location.origin;
+
+    let currentImageData = "";
+    let currentReporterMode = "single";
+    let pendingSingleAnalysis = null;
+    let pendingRoomScanAnalysis = null;
+    let activeDuplicateMatch = null;
+    let activeTaskForAfterPhoto = null;
+    let activeInspectingIncident = null;
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+      
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+
+      const targetView = document.getElementById(`view-${tabId}`);
+      if (targetView) targetView.classList.add('active');
+
+      if (tabId === 'maintenance') loadMaintenanceTasks();
+      if (tabId === 'verification') loadPendingVerifications();
+      if (tabId === 'admin') loadAnalytics();
+    }
+
+    function setReporterMode(mode) {
+      currentReporterMode = mode;
+      document.getElementById('mode-single-btn').className = mode === 'single' ? 'btn btn-primary' : 'btn btn-secondary';
+      document.getElementById('mode-room-btn').className = mode === 'room' ? 'btn btn-primary' : 'btn btn-secondary';
+      document.getElementById('scan-mode-indicator').textContent = mode === 'single' ? 'Single Defect Mode' : 'Room Scan Mode';
+    }
+
+    let selectedReporterRole = "Student";
+    function setReporterRole(role) {
+      selectedReporterRole = role;
+      const studentBtn = document.getElementById('role-student-btn');
+      const facultyBtn = document.getElementById('role-faculty-btn');
+      if (role === 'Student') {
+        studentBtn.style.background = 'rgba(56, 189, 248, 0.15)';
+        studentBtn.style.borderColor = 'var(--primary)';
+        studentBtn.style.color = 'var(--primary)';
+        facultyBtn.style.background = '#1B2436';
+        facultyBtn.style.borderColor = '#2B3A54';
+        facultyBtn.style.color = '#CBD5E1';
+      } else {
+        facultyBtn.style.background = 'rgba(56, 189, 248, 0.15)';
+        facultyBtn.style.borderColor = 'var(--primary)';
+        facultyBtn.style.color = 'var(--primary)';
+        studentBtn.style.background = '#1B2436';
+        studentBtn.style.borderColor = '#2B3A54';
+        studentBtn.style.color = '#CBD5E1';
+      }
+    }
+
+    // Helper to safely convert SVG to Data URI without character encoding crashes
+    function safeSvgToDataUrl(svgStr) {
+      try {
+        return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgStr)));
+      } catch (e) {
+        return 'data:image/svg+xml;utf8,' + encodeURIComponent(svgStr);
+      }
+    }
+
+    // Toast Notification System
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'toast-item';
+      let icon = '🔔';
+      if (type === 'success') icon = '✨';
+      if (type === 'warn') icon = '⚠️';
+      if (type === 'error') icon = '❌';
+      toast.innerHTML = `<span style="font-size:16px;">${icon}</span><span>${msg}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // QR & NFC Classroom Plaque Scanner
+    function openQrScannerModal() {
+      document.getElementById('qr-scanner-modal').classList.add('active');
+      const statusEl = document.getElementById('qr-scan-status');
+      statusEl.textContent = 'Targeting Room Plaque QR Tag...';
+      statusEl.style.color = 'var(--primary)';
+    }
+
+    function closeQrModal() {
+      document.getElementById('qr-scanner-modal').classList.remove('active');
+    }
+
+    function simulateScanPlaque(location) {
+      const statusEl = document.getElementById('qr-scan-status');
+      statusEl.textContent = 'Tag Acquired: Reading RFID & Spatial Metadata...';
+      statusEl.style.color = 'var(--emerald)';
+      setTimeout(() => {
+        document.getElementById('locationInput').value = location;
+        closeQrModal();
+        showToast(`📍 Plaque Detected: ${location}`, 'success');
+      }, 500);
+    }
+
+    // Multimodal Voice Memo System
+    let voiceMemoActive = false;
+    let voiceRecordingTimer = null;
+    let speechRecognitionInstance = null;
+
+    function toggleVoiceMemo() {
+      if (voiceMemoActive) {
+        stopVoiceMemo();
+      } else {
+        startVoiceMemo();
+      }
+    }
+
+    function startVoiceMemo() {
+      voiceMemoActive = true;
+      const panel = document.getElementById('voice-memo-panel');
+      const btn = document.getElementById('voice-memo-btn');
+      const statusText = document.getElementById('voice-status-text');
+      const beacon = document.getElementById('voice-beacon');
+      const stopBtn = document.getElementById('voice-stop-btn');
+      const waveform = document.getElementById('voice-waveform');
+
+      panel.style.display = 'block';
+      btn.innerHTML = '⏹️ Stop Recording';
+      btn.style.borderColor = 'var(--rose)';
+      btn.style.color = 'var(--rose)';
+      btn.style.background = 'rgba(244, 63, 94, 0.15)';
+
+      statusText.textContent = 'Listening & transcribing...';
+      statusText.style.color = 'var(--rose)';
+      beacon.className = 'beacon beacon-danger pulse';
+      stopBtn.style.display = 'inline-block';
+      waveform.style.opacity = '1';
+
+      // Check if browser Web Speech API is supported
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        try {
+          speechRecognitionInstance = new SpeechRecognition();
+          speechRecognitionInstance.continuous = false;
+          speechRecognitionInstance.interimResults = true;
+          speechRecognitionInstance.onresult = function(event) {
+            let transcript = '';
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+              transcript += event.results[i][0].transcript;
+            }
+            if (transcript.trim()) {
+              document.getElementById('voice-transcript-text').textContent = `"${transcript}"`;
+            }
+          };
+          speechRecognitionInstance.onerror = function() {
+            // Keep default transcript if mic error
+          };
+          speechRecognitionInstance.onend = function() {
+            stopVoiceMemo();
+          };
+          speechRecognitionInstance.start();
+        } catch (e) {
+          // If mic error or permission denied, simulation continues seamlessly
+        }
+      }
+
+      showToast('🎙️ Voice stream started. Speak now, or click Stop when finished.');
+
+      // Auto-finalize simulated transcript after 4.5 seconds if user doesn't click Stop
+      if (voiceRecordingTimer) clearTimeout(voiceRecordingTimer);
+      voiceRecordingTimer = setTimeout(() => {
+        if (voiceMemoActive) {
+          stopVoiceMemo();
+        }
+      }, 4500);
+    }
+
+    function stopVoiceMemo() {
+      voiceMemoActive = false;
+      if (speechRecognitionInstance) {
+        try { speechRecognitionInstance.stop(); } catch(e) {}
+        speechRecognitionInstance = null;
+      }
+      if (voiceRecordingTimer) {
+        clearTimeout(voiceRecordingTimer);
+        voiceRecordingTimer = null;
+      }
+
+      const statusText = document.getElementById('voice-status-text');
+      const beacon = document.getElementById('voice-beacon');
+      const btn = document.getElementById('voice-memo-btn');
+      const stopBtn = document.getElementById('voice-stop-btn');
+      const waveform = document.getElementById('voice-waveform');
+
+      if (statusText) {
+        statusText.textContent = 'Transcription complete ✅';
+        statusText.style.color = 'var(--emerald)';
+      }
+      if (beacon) {
+        beacon.className = 'beacon beacon-ok';
+      }
+      if (stopBtn) {
+        stopBtn.style.display = 'none';
+      }
+      if (waveform) {
+        waveform.style.opacity = '0.35';
+      }
+
+      if (btn) {
+        btn.innerHTML = '🎙️ Voice Note Saved (Ready)';
+        btn.style.borderColor = 'var(--emerald)';
+        btn.style.color = 'var(--emerald)';
+        btn.style.background = 'rgba(16, 185, 129, 0.12)';
+      }
+
+      showToast('✅ Voice memo captured and attached to ticket!', 'success');
+    }
+
+    function closeVoiceMemo() {
+      if (speechRecognitionInstance) {
+        try { speechRecognitionInstance.stop(); } catch(e) {}
+        speechRecognitionInstance = null;
+      }
+      if (voiceRecordingTimer) {
+        clearTimeout(voiceRecordingTimer);
+        voiceRecordingTimer = null;
+      }
+
+      voiceMemoActive = false;
+      document.getElementById('voice-memo-panel').style.display = 'none';
+      const btn = document.getElementById('voice-memo-btn');
+      btn.innerHTML = '🎙️ Add Voice Memo';
+      btn.style.borderColor = '#2B3A54';
+      btn.style.color = '#CBD5E1';
+      btn.style.background = '#1B2436';
+      showToast('Voice memo cleared');
+    }
+
+    // Interactive Verification Hub Slider & Tools
+    let verifViewMode = 'slider';
+    let bboxOverlayActive = false;
+
+    function setVerifViewMode(mode) {
+      verifViewMode = mode;
+      document.getElementById('verif-mode-tag').textContent = mode === 'slider' ? 'Interactive Split Slider' : 'Side-by-Side View';
+      
+      const sliderBtn = document.getElementById('btn-mode-slider');
+      const splitBtn = document.getElementById('btn-mode-split');
+
+      sliderBtn.style.background = mode === 'slider' ? 'rgba(56, 189, 248, 0.15)' : 'transparent';
+      sliderBtn.style.borderColor = mode === 'slider' ? 'var(--primary)' : '#2B3A54';
+      sliderBtn.style.color = mode === 'slider' ? 'var(--primary)' : '#CBD5E1';
+
+      splitBtn.style.background = mode === 'split' ? 'rgba(56, 189, 248, 0.15)' : 'transparent';
+      splitBtn.style.borderColor = mode === 'split' ? 'var(--primary)' : '#2B3A54';
+      splitBtn.style.color = mode === 'split' ? 'var(--primary)' : '#CBD5E1';
+
+      document.getElementById('verif-slider-wrapper').style.display = mode === 'slider' ? 'block' : 'none';
+      document.getElementById('verif-side-by-side').style.display = mode === 'split' ? 'grid' : 'none';
+    }
+
+    function updateSliderPosition(val) {
+      const overlay = document.getElementById('sliderOverlay');
+      const divider = document.getElementById('sliderDivider');
+      const label = document.getElementById('slider-pct-label');
+      if (overlay && divider && label) {
+        overlay.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+        divider.style.left = `${val}%`;
+        label.textContent = `Split: ${val}% / ${100 - val}%`;
+      }
+    }
+
+    function toggleBBoxOverlay() {
+      bboxOverlayActive = !bboxOverlayActive;
+      const bbox = document.getElementById('slider-defect-bbox');
+      const btn = document.getElementById('btn-toggle-bbox');
+      if (bbox) bbox.style.display = bboxOverlayActive ? 'flex' : 'none';
+      if (btn) {
+        btn.style.borderColor = bboxOverlayActive ? 'var(--emerald)' : '#2B3A54';
+        btn.style.color = bboxOverlayActive ? 'var(--emerald)' : '#CBD5E1';
+      }
+      showToast(bboxOverlayActive ? '👁️ Defect Delta Bounding Highlight Enabled' : 'Defect Delta Bounding Hidden', 'info');
+    }
+
+    // Campus Digital Twin Blueprint Controls
+    function openRoomDetails(roomId, title, status, faults, desc) {
+      const drawer = document.getElementById('room-detail-drawer');
+      document.getElementById('room-drawer-title').textContent = `${roomId} (${title})`;
+      const badge = document.getElementById('room-drawer-badge');
+      badge.textContent = status;
+      badge.className = status === 'Normal' ? 'tag tag-p3' : (status.includes('Critical') ? 'tag tag-p1' : 'tag tag-p2');
+      document.getElementById('room-drawer-desc').textContent = desc;
+      drawer.style.display = 'block';
+      showToast(`📍 Selected ${roomId}: ${status}`);
+    }
+
+    function closeRoomDrawer() {
+      document.getElementById('room-detail-drawer').style.display = 'none';
+    }
+
+    // Load Demo Scenarios
+    async function loadDemoScenario(type, autoAnalyze = true) {
+      let assetFile = "classroom_fan_broken.svg";
+      let location = "Block B / Room 204";
+      if (type === 'room_scan') {
+        assetFile = "classroom_wide_scan.svg";
+        setReporterMode('room');
+      } else if (type === 'water_leak') {
+        assetFile = "washroom_leak.svg";
+        location = "Block C / 2nd Fl Washroom";
+        setReporterMode('single');
+      } else {
+        setReporterMode('single');
+      }
+
+      document.getElementById('locationInput').value = location;
+
+      try {
+        const res = await fetch(`${API_BASE}/demo_assets/${assetFile}`);
+        const svgText = await res.text();
+        currentImageData = safeSvgToDataUrl(svgText);
+        
+        const preview = document.getElementById('imagePreview');
+        preview.src = currentImageData;
+        preview.style.display = 'block';
+        document.getElementById('upload-placeholder').style.display = 'none';
+
+        if (autoAnalyze) {
+          triggerAnalyze();
+        }
+      } catch (err) {
+        console.error("Failed to load demo scenario:", err);
+      }
+    }
+
+    // Trigger AI Vision
+    async function triggerAnalyze() {
+      if (!currentImageData) {
+        alert("Please select a scenario or upload an image first.");
+        return;
+      }
+
+      const locationHint = document.getElementById('locationInput').value;
+      const statusBadge = document.getElementById('ai-status-badge');
+      statusBadge.textContent = "AI Analyzing Scene...";
+      statusBadge.className = "tag tag-p2";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/analyze-image`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            image_data: currentImageData,
+            location_hint: locationHint,
+            is_room_scan: currentReporterMode === 'room'
+          })
+        });
+
+        const json = await res.json();
+        statusBadge.textContent = "Analysis Complete";
+        statusBadge.className = "tag tag-p3";
+
+        document.getElementById('ai-output-empty').style.display = 'none';
+
+        if (json.mode === 'room_scan') {
+          displayRoomScanResults(json.data);
+          showToast(`🔍 Room Scan: Identified ${json.data.candidate_issues.length} potential defects`, 'success');
+        } else {
+          displaySingleResults(json.data);
+          showToast(`✨ Vision AI: Classified ${json.data.object} (${Math.round(json.data.confidence * 100)}% conf)`, 'success');
+        }
+      } catch (err) {
+        statusBadge.textContent = "Analysis Failed";
+        console.error(err);
+      }
+    }
+
+    function displaySingleResults(data) {
+      pendingSingleAnalysis = data;
+      document.getElementById('ai-output-room').style.display = 'none';
+      document.getElementById('ai-output-single').style.display = 'block';
+
+      document.getElementById('res-object').textContent = data.object;
+      document.getElementById('res-defect').textContent = data.defect;
+      document.getElementById('res-summary').textContent = data.summary;
+      document.getElementById('res-dept').textContent = data.department;
+      document.getElementById('res-priority').textContent = data.priority;
+      document.getElementById('res-confidence').textContent = `${Math.round(data.confidence * 100)}%`;
+
+      // Check duplicates non-intrusively (Inline Banner Only, NO MODAL POPUP)
+      checkDuplicatesBeforeSubmit(data);
+    }
+
+    function displayRoomScanResults(data) {
+      pendingRoomScanAnalysis = data;
+      document.getElementById('ai-output-single').style.display = 'none';
+      document.getElementById('ai-output-room').style.display = 'block';
+
+      const listContainer = document.getElementById('room-scan-checklist');
+      listContainer.innerHTML = '';
+
+      data.candidate_issues.forEach(issue => {
+        const itemDiv = document.createElement('div');
+        itemDiv.style.cssText = 'background:#0F172A; border:1px solid #232F45; border-radius:8px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;';
+        itemDiv.innerHTML = `
+          <div style="display:flex; align-items:center; gap:10px;">
+            <input type="checkbox" id="scan-item-${issue.id}" checked style="width:16px; height:16px; accent-color:var(--primary);">
+            <div>
+              <div style="font-size:13px; font-weight:bold; color:white;">${issue.object}</div>
+              <div style="font-size:11px; color:var(--text-muted);">${issue.defect} (${issue.bounding_area})</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span class="tag tag-dept">${issue.department}</span>
+            <span class="tag tag-p2">${issue.priority}</span>
+          </div>
+        `;
+        listContainer.appendChild(itemDiv);
+      });
+    }
+
+    let userBypassedDuplicate = false;
+
+    // Duplicate Check
+    async function checkDuplicatesBeforeSubmit(data) {
+      const loc = document.getElementById('locationInput').value;
+      const advisory = document.getElementById('dup-inline-advisory');
+      userBypassedDuplicate = false; // Reset bypass state on new analysis
+
+      try {
+        const res = await fetch(`${API_BASE}/api/check-duplicates`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            location: loc,
+            category: data.category,
+            object_name: data.object
+          })
+        });
+
+        const dupResult = await res.json();
+        if (dupResult.is_duplicate && dupResult.matched_incident) {
+          activeDuplicateMatch = dupResult.matched_incident;
+          document.getElementById('dup-id').textContent = activeDuplicateMatch.id;
+          document.getElementById('dup-title').textContent = activeDuplicateMatch.title;
+          document.getElementById('dup-location').textContent = activeDuplicateMatch.location;
+          document.getElementById('dup-status').textContent = `Status: ${activeDuplicateMatch.status}`;
+          
+          if (advisory) {
+            document.getElementById('dup-inline-desc').textContent = 
+              `Ticket ${activeDuplicateMatch.id} ("${activeDuplicateMatch.title}") is already active at ${activeDuplicateMatch.location}.`;
+            advisory.style.display = 'block';
+          }
+          // IMPORTANT: DO NOT add active class to duplicate-modal here! Screen remains completely unblocked!
+        } else {
+          activeDuplicateMatch = null;
+          if (advisory) advisory.style.display = 'none';
+        }
+      } catch (err) {
+        console.error("Duplicate check error:", err);
+      }
+    }
+
+    function openDuplicateModalFromAdvisory() {
+      if (activeDuplicateMatch) {
+        document.getElementById('duplicate-modal').classList.add('active');
+      }
+    }
+
+    function dismissDuplicateModal() {
+      document.getElementById('duplicate-modal').classList.remove('active');
+    }
+
+    async function confirmUpvoteDuplicate() {
+      if (!activeDuplicateMatch) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/incidents/${activeDuplicateMatch.id}/upvote`, { method: 'POST' });
+        const json = await res.json();
+        showToast(`👍 Merged into ${activeDuplicateMatch.id}! Total upvotes: ${json.upvotes}`, 'success');
+        document.getElementById('duplicate-modal').classList.remove('active');
+        switchTab('maintenance');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function closeDuplicateModalAndProceed() {
+      userBypassedDuplicate = true;
+      document.getElementById('duplicate-modal').classList.remove('active');
+      submitSingleIncident();
+    }
+
+    // Submit Incidents
+    async function submitSingleIncident() {
+      if (!pendingSingleAnalysis) return;
+
+      // If duplicate detected and user hasn't explicitly chosen to bypass, prompt confirmation
+      if (activeDuplicateMatch && !userBypassedDuplicate) {
+        document.getElementById('duplicate-modal').classList.add('active');
+        return;
+      }
+
+      const loc = document.getElementById('locationInput').value;
+      let incidentDesc = pendingSingleAnalysis.summary;
+      if (voiceMemoActive) {
+        const memoText = document.getElementById('voice-transcript-text').textContent.trim();
+        incidentDesc += ` [Voice Memo: "${memoText}"]`;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/incidents`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: `${pendingSingleAnalysis.object} - ${pendingSingleAnalysis.defect}`,
+            description: incidentDesc,
+            location: loc,
+            category: pendingSingleAnalysis.category,
+            department: pendingSingleAnalysis.department,
+            priority: pendingSingleAnalysis.priority,
+            before_image: currentImageData,
+            confidence: pendingSingleAnalysis.confidence,
+            reporter_role: selectedReporterRole,
+            is_room_scan: false
+          })
+        });
+
+        const json = await res.json();
+        showToast(`🚀 Dispatched ${json.incident_id} to ${pendingSingleAnalysis.department}!`, 'success');
+        userBypassedDuplicate = false;
+        switchTab('maintenance');
+      } catch (err) {
+        alert("Failed to create incident");
+      }
+    }
+
+    async function submitRoomScanBatch() {
+      if (!pendingRoomScanAnalysis) return;
+      const loc = document.getElementById('locationInput').value;
+
+      const selectedIssues = pendingRoomScanAnalysis.candidate_issues.filter(issue => {
+        const chk = document.getElementById(`scan-item-${issue.id}`);
+        return chk && chk.checked;
+      });
+
+      if (selectedIssues.length === 0) {
+        alert("Please select at least one defect to submit.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/incidents/batch`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            location: loc,
+            before_image: currentImageData,
+            issues: selectedIssues
+          })
+        });
+
+        const json = await res.json();
+        alert(`Success! Created ${json.incident_ids.length} incidents from Room Scan pass.`);
+        switchTab('maintenance');
+      } catch (err) {
+        alert("Batch creation failed");
+      }
+    }
+
+    // Maintenance Tasks View
+    async function loadMaintenanceTasks() {
+      const container = document.getElementById('maintenance-tasks-container');
+      container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-muted);">Loading maintenance tasks...</div>';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/maintenance/tasks`);
+        const tasks = await res.json();
+
+        if (tasks.length === 0) {
+          container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--text-muted);">No open maintenance tasks!</div>';
+          return;
+        }
+
+        container.innerHTML = '';
+        tasks.forEach(task => {
+          const row = document.createElement('div');
+          row.className = 'incident-row';
+          row.innerHTML = `
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:65px; height:65px; border-radius:8px; overflow:hidden; background:#0B0F19; border:1px solid #232F45; flex-shrink:0;">
+                <img src="${task.before_image || ''}" style="width:100%; height:100%; object-fit:contain;">
+              </div>
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span class="tag tag-dept" style="font-weight:bold;">${task.id}</span>
+                  <span style="font-weight:700; font-size:14px; color:white;">${task.title}</span>
+                  <span class="tag tag-p2">${task.priority}</span>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+                  📍 ${task.location} &nbsp;|&nbsp; 🏢 ${task.department} &nbsp;|&nbsp; 👍 ${task.upvotes} reports merged
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:8px;">
+              ${task.status === 'Reported' ? `
+                <button class="btn btn-secondary" onclick="markInProgress('${task.id}')">Start Repair</button>
+              ` : ''}
+              ${task.status === 'Awaiting Verification' ? `
+                <button class="btn btn-secondary" onclick="inspectVerification('${task.id}')">🔍 View AI Diff</button>
+              ` : `
+                <button class="btn btn-primary" onclick="openAfterModal('${task.id}')">📷 Upload After Photo</button>
+              `}
+            </div>
+          `;
+          container.appendChild(row);
+        });
+      } catch (err) {
+        container.innerHTML = '<div style="color:var(--rose);">Failed to load tasks.</div>';
+      }
+    }
+
+    async function markInProgress(id) {
+      await fetch(`${API_BASE}/api/incidents/${id}/status`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'In Progress', actor: 'Maintenance Technician', notes: 'Work started' })
+      });
+      loadMaintenanceTasks();
+    }
+
+    // After Photo Modal
+    function openAfterModal(taskId) {
+      activeTaskForAfterPhoto = taskId;
+      const img = document.getElementById('after-img-preview');
+      img.src = '';
+      img.style.display = 'none';
+      document.getElementById('after-placeholder').style.display = 'block';
+      document.getElementById('after-preview-box').style.borderColor = '#2B3A54';
+      document.getElementById('after-photo-modal').classList.add('active');
+    }
+
+    function closeAfterModal() {
+      document.getElementById('after-photo-modal').classList.remove('active');
+    }
+
+    async function loadAfterPreset() {
+      try {
+        const res = await fetch(`${API_BASE}/demo_assets/classroom_fan_fixed.svg`);
+        const text = await res.text();
+        const dataUrl = safeSvgToDataUrl(text);
+        const img = document.getElementById('after-img-preview');
+        img.src = dataUrl;
+        img.style.display = 'block';
+        document.getElementById('after-placeholder').style.display = 'none';
+        document.getElementById('after-preview-box').style.borderColor = 'var(--emerald)';
+      } catch (err) {
+        console.error("loadAfterPreset error:", err);
+        alert("Failed to load preset: " + err.message);
+      }
+    }
+
+    function handleAfterFileUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = document.getElementById('after-img-preview');
+          img.src = evt.target.result;
+          img.style.display = 'block';
+          document.getElementById('after-placeholder').style.display = 'none';
+          document.getElementById('after-preview-box').style.borderColor = 'var(--emerald)';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    async function submitAfterPhoto() {
+      const imgElem = document.getElementById('after-img-preview');
+      const img = imgElem.src;
+      const notes = document.getElementById('technician-notes').value;
+
+      if (!img || imgElem.style.display === 'none') {
+        alert("Please click the preset button or upload an After-photo first.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/maintenance/upload-after-photo`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            incident_id: activeTaskForAfterPhoto,
+            after_image: img,
+            technician_name: "Campus Maintenance Team",
+            repair_notes: notes
+          })
+        });
+
+        const json = await res.json();
+        closeAfterModal();
+        alert(`After-Photo uploaded! AI Verification: ${json.verification_result.verification_status} (${Math.round(json.verification_result.resolution_confidence*100)}% Confidence)`);
+        switchTab('verification');
+        inspectVerification(activeTaskForAfterPhoto);
+      } catch (err) {
+        alert("Failed to submit after photo");
+      }
+    }
+
+    // AI Verification Hub Logic
+    async function loadPendingVerifications() {
+      const container = document.getElementById('pending-verifications-list');
+      try {
+        const res = await fetch(`${API_BASE}/api/verification/pending`);
+        const items = await res.json();
+
+        document.getElementById('pending-verif-count').textContent = `${items.length} items`;
+        container.innerHTML = '';
+
+        if (items.length === 0) {
+          container.innerHTML = '<div style="text-align:center; padding:20px; color:var(--text-muted);">No items awaiting verification.</div>';
+          return;
+        }
+
+        items.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'incident-row';
+          div.innerHTML = `
+            <div>
+              <span class="tag tag-dept">${item.id}</span>
+              <strong style="color:white; margin-left:8px;">${item.title}</strong>
+              <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">📍 ${item.location}</div>
+            </div>
+            <button class="btn btn-primary" onclick="inspectVerification('${item.id}')">Inspect Before/After</button>
+          `;
+          container.appendChild(div);
+        });
+
+        if (items.length > 0 && !activeInspectingIncident) {
+          inspectVerification(items[0].id);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function inspectVerification(incidentId) {
+      try {
+        const res = await fetch(`${API_BASE}/api/incidents/${incidentId}`);
+        const inc = await res.json();
+        activeInspectingIncident = inc;
+
+        document.getElementById('verification-inspector').style.display = 'block';
+        document.getElementById('verif-task-id').textContent = inc.id;
+        document.getElementById('verif-task-title').textContent = inc.title;
+        document.getElementById('verif-before-img').src = inc.before_image || '';
+        document.getElementById('verif-after-img').src = inc.after_image || '';
+
+        // Synchronize interactive split-screen slider
+        const sliderBefore = document.getElementById('slider-before-img');
+        const sliderAfter = document.getElementById('slider-after-img');
+        if (sliderBefore) sliderBefore.src = inc.before_image || '';
+        if (sliderAfter) sliderAfter.src = inc.after_image || '';
+
+        const sliderRange = document.getElementById('sliderRangeInput');
+        if (sliderRange) sliderRange.value = 50;
+        updateSliderPosition(50);
+
+        const conf = Math.round((inc.verification_confidence || 0.95) * 100);
+        document.getElementById('verif-score-pill').textContent = `${conf}% Resolution Confidence ✅`;
+        document.getElementById('verif-details').textContent = inc.verification_notes || "Repairs confirmed consistent with work order.";
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function approveCurrentResolution() {
+      if (!activeInspectingIncident) return;
+      try {
+        await fetch(`${API_BASE}/api/verification/approve`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            incident_id: activeInspectingIncident.id,
+            supervisor_name: "Chief Facilities Officer",
+            approval_notes: "Visual proof of resolution verified. Ticket confirmed closed."
+          })
+        });
+
+        alert(`Incident ${activeInspectingIncident.id} officially Verified & Closed!`);
+        document.getElementById('verification-inspector').style.display = 'none';
+        activeInspectingIncident = null;
+        loadPendingVerifications();
+        switchTab('admin');
+      } catch (err) {
+        alert("Approval failed");
+      }
+    }
+
+    async function reverifyCurrent() {
+      if (!activeInspectingIncident) return;
+      await fetch(`${API_BASE}/api/verification/reverify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ incident_id: activeInspectingIncident.id })
+      });
+      inspectVerification(activeInspectingIncident.id);
+    }
+
+    // Admin Analytics
+    async function loadAnalytics() {
+      try {
+        const res = await fetch(`${API_BASE}/api/analytics`);
+        const data = await res.json();
+
+        document.getElementById('kpi-total').textContent = data.kpis.total_incidents;
+        document.getElementById('kpi-active').textContent = data.kpis.in_progress + data.kpis.open_reported;
+        document.getElementById('kpi-resolved').textContent = data.kpis.verified_resolved;
+        document.getElementById('kpi-rate').textContent = `${data.kpis.resolution_rate_pct}% Verified`;
+        document.getElementById('kpi-duplicates').textContent = data.kpis.duplicates_merged;
+
+        // Department breakdown bars
+        const deptBox = document.getElementById('dept-bars-container');
+        deptBox.innerHTML = '';
+        for (const [dept, count] of Object.entries(data.department_distribution)) {
+          const pct = Math.round((count / Math.max(1, data.kpis.total_incidents)) * 100);
+          const barDiv = document.createElement('div');
+          barDiv.innerHTML = `
+            <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+              <span style="color:#CBD5E1;">${dept}</span>
+              <span style="font-weight:bold; color:var(--primary);">${count} (${pct}%)</span>
+            </div>
+            <div style="height:6px; background:#0B0F19; border-radius:4px; overflow:hidden;">
+              <div style="width:${pct}%; height:100%; background:var(--primary); border-radius:4px;"></div>
+            </div>
+          `;
+          deptBox.appendChild(barDiv);
+        }
+
+        // Audit Trail
+        const auditBox = document.getElementById('audit-trail-container');
+        auditBox.innerHTML = '';
+        data.recent_audit_trail.forEach(evt => {
+          const item = document.createElement('div');
+          item.style.cssText = 'background:#0F172A; border:1px solid #232F45; border-radius:8px; padding:10px 12px; font-size:12px;';
+          item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
+              <strong style="color:var(--primary);">${evt.incident_id}: ${evt.action}</strong>
+              <span style="color:var(--text-muted); font-size:10px;">${new Date(evt.timestamp).toLocaleTimeString()}</span>
+            </div>
+            <div style="color:#CBD5E1; font-size:11px;">${evt.actor} &mdash; ${evt.details || ''}</div>
+          `;
+          auditBox.appendChild(item);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function exportAccreditationReport() {
+      try {
+        const res = await fetch(`${API_BASE}/api/incidents`);
+        const incidents = await res.json();
+        
+        let csv = "Incident ID,Title,Location,Department,Priority,Status,Reporter,Upvotes Merged,AI Verification Status,AI Confidence,Reported At,Resolved At\n";
+        
+        incidents.forEach(inc => {
+          const row = [
+            inc.id,
+            `"${(inc.title || '').replace(/"/g, '""')}"`,
+            `"${(inc.location || '').replace(/"/g, '""')}"`,
+            `"${inc.department || ''}"`,
+            `"${inc.priority || ''}"`,
+            `"${inc.status || ''}"`,
+            `"${inc.reporter_role || ''}"`,
+            inc.upvotes || 1,
+            `"${inc.verification_status || 'Unverified'}"`,
+            `${Math.round((inc.verification_confidence || 0) * 100)}%`,
+            `"${inc.created_at || ''}"`,
+            `"${inc.resolved_at || 'Pending'}"`
+          ];
+          csv += row.join(",") + "\n";
+        });
+
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `CampusFix_Accreditation_Audit_Log_${new Date().toISOString().split('T')[0]}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        console.error("Failed to export accreditation audit:", err);
+        alert("Export failed: " + err.message);
+      }
+    }
+
+    function handleFileUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          currentImageData = evt.target.result;
+          const preview = document.getElementById('imagePreview');
+          preview.src = currentImageData;
+          preview.style.display = 'block';
+          document.getElementById('upload-placeholder').style.display = 'none';
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    document.getElementById('dropzone').addEventListener('click', () => {
+      document.getElementById('fileInput').click();
+    });
+
+    // Auto-load initial data preview cleanly without firing modal or analysis
+    loadDemoScenario('fan_broken', false);
+  </script>
+</body>
+</html>

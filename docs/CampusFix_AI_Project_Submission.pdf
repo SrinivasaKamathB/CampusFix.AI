@@ -1,0 +1,893 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R 6 0 R] /Count 4 >>
+endobj
+
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R /F4 14 0 R >> >> /Contents 7 0 R >>
+endobj
+
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R /F4 14 0 R >> >> /Contents 8 0 R >>
+endobj
+
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R /F4 14 0 R >> >> /Contents 9 0 R >>
+endobj
+
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R /F4 14 0 R >> >> /Contents 10 0 R >>
+endobj
+
+7 0 obj
+<< /Length 10883 >>
+stream
+q
+0.070 0.230 0.420 rg
+36.00 789.89 230.00 14.00 re
+f
+Q
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 42.00 792.89 Td (THEME: REIMAGINING THE SMART CAMPUS) Tj ET
+BT /F2 22.00 Tf 0.070 0.230 0.420 rg 36.00 771.89 Td (CampusFix AI) Tj ET
+BT /F2 10.50 Tf 0.200 0.250 0.350 rg 36.00 755.89 Td (Visual Campus Maintenance & Resolution Intelligence System) Tj ET
+BT /F3 9.50 Tf 0.000 0.450 0.600 rg 36.00 742.89 Td ("Don't fill a complaint form. Show the problem.") Tj ET
+q
+0.140 0.280 0.450 rg
+36.00 711.89 126.32 24.00 re
+f
+Q
+BT /F2 6.50 Tf 0.700 0.850 1.000 rg 40.00 727.89 Td (DOMAIN) Tj ET
+BT /F1 6.80 Tf 1.000 1.000 1.000 rg 40.00 717.89 Td (Campus Infrastructure & Student Exp.) Tj ET
+q
+0.140 0.280 0.450 rg
+168.32 711.89 126.32 24.00 re
+f
+Q
+BT /F2 6.50 Tf 0.700 0.850 1.000 rg 172.32 727.89 Td (HARDWARE) Tj ET
+BT /F1 6.80 Tf 1.000 1.000 1.000 rg 172.32 717.89 Td (None  -  Zero Capex, Software Only) Tj ET
+q
+0.140 0.280 0.450 rg
+300.64 711.89 126.32 24.00 re
+f
+Q
+BT /F2 6.50 Tf 0.700 0.850 1.000 rg 304.64 727.89 Td (AI CORE) Tj ET
+BT /F1 6.80 Tf 1.000 1.000 1.000 rg 304.64 717.89 Td (Multimodal Vision + Workflow + Verification) Tj ET
+q
+0.140 0.280 0.450 rg
+432.96 711.89 126.32 24.00 re
+f
+Q
+BT /F2 6.50 Tf 0.700 0.850 1.000 rg 436.96 727.89 Td (STAGE) Tj ET
+BT /F1 6.80 Tf 1.000 1.000 1.000 rg 436.96 717.89 Td (Hackathon Prototype / Proposed MVP) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 697.89 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 701.39 Td (1) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 700.89 Td (Executive Summary) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 697.89 m 559.28 697.89 l S Q
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 680.89 Td (Every campus continuously generates physical maintenance issues  -  broken classroom fans, damaged lights, malfunctioning projectors,) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 671.69 Td (water leakage, electrical faults, damaged desks and chairs, overflowing waste bins, laboratory equipment problems, and broken doors or) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 662.49 Td (windows. These are not occasional events; they are a constant, low-visibility operational load on every institution.) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 651.29 Td (Today, this load is absorbed through verbal complaints, paper forms, phone calls, and generic complaint portals, followed by repeated) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 642.09 Td (follow-ups. The result is predictable failure modes: students do not know which department is responsible; maintenance teams receive) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 632.89 Td (vague text-only descriptions; multiple students independently report the same problem; administrators lack visual evidence to prioritise) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 623.69 Td (work; and students lack visibility into complaint progress. Most critically, traditional systems rarely maintain structured before/after) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 614.49 Td (evidence proving that a reported problem was actually addressed.) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 603.29 Td (CampusFix AI proposes a different entry point: instead of asking a student to describe a problem in words, it asks them to photograph) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 594.09 Td (it. The system analyzes the image, identifies the affected object and visible problem, classifies category, suggests the responsible) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 584.89 Td (department, creates a structured incident, checks for duplicates, and dispatches a task. Once staff complete the repair, they upload an) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 575.69 Td (after-repair photo; the vision model compares before/after evidence for AI-assisted verification before authorized staff confirm) Tj ET
+BT /F1 7.50 Tf 0.150 0.150 0.200 rg 36.00 566.49 Td (closure.) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 538.29 523.28 14.00 re
+f
+Q
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 61.00 542.29 Td (CAPTURE  ->  UNDERSTAND  ->  CLASSIFY  ->  ROUTE  ->  REPAIR  ->  VERIFY  ->  CLOSE) Tj ET
+q
+0.700 0.800 0.950 RG 0.50 w
+0.950 0.970 1.000 rg
+36.00 519.29 523.28 13.00 re
+B
+Q
+BT /F3 7.20 Tf 0.070 0.230 0.420 rg 44.00 522.79 Td ("CampusFix AI is not simply another complaint portal. It creates an evidence-based digital lifecycle for physical campus maintenance.") Tj ET
+q
+0.700 0.820 0.950 RG 0.50 w
+0.960 0.980 1.000 rg
+36.00 489.29 257.64 26.00 re
+B
+Q
+BT /F2 7.50 Tf 0.070 0.230 0.420 rg 42.00 507.29 Td (Innovation 1  -  Room Scan Mode) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 42.00 499.29 Td (One classroom or corridor photograph surfaces multiple candidate) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 42.00 491.29 Td (maintenance issues at once for student review.) Tj ET
+q
+0.700 0.820 0.950 RG 0.50 w
+0.960 0.980 1.000 rg
+301.64 489.29 257.64 26.00 re
+B
+Q
+BT /F2 7.50 Tf 0.070 0.230 0.420 rg 307.64 507.29 Td (Innovation 2  -  Before/After Verification) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 307.64 499.29 Td (The system compares original and post-repair photographs to assist  - ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 307.64 491.29 Td (not replace  -  human verification of reported repairs.) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 476.29 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 479.79 Td (2) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 479.29 Td (The Real Campus Pain Points & Maintenance Gridlock) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 476.2899999999994 m 559.28 476.2899999999994 l S Q
+q
+0.070 0.230 0.420 rg
+36.00 446.79 523.00 16.50 re
+f
+Q
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 40.00 452.29 Td (Campus Maintenance Problem) Tj ET
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 170.00 452.29 Td (Current Campus Nightmare) Tj ET
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 355.00 452.29 Td (Why Traditional Complaint Systems Fail) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 424.89 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 438.09 Td (Broken classroom equipment \(fans,) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 428.89 Td (lights, projectors\)) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 438.09 Td (Reported verbally or through generic, text-only) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 428.89 Td (complaint forms) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 438.09 Td (No visual proof of the fault; staff must inspect blind) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 428.89 Td (before triaging) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 402.99 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 416.19 Td (Water leakage / plumbing) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 416.19 Td (Several students may independently report the same) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 406.99 Td (physical leak) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 416.19 Td (No de-duplication  -  one leak becomes many disconnected) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 406.99 Td (tickets) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 381.09 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 394.29 Td (Electrical faults) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 394.29 Td (Students may not know whether issue belongs to) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 385.09 Td (electrical, maintenance, or IT) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 394.29 Td (Manual triage delays routing; misrouted tickets bounce) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 385.09 Td (between departments) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 359.19 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 372.39 Td (Damaged furniture) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 372.39 Td (Low-priority issues remain unresolved with no) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 363.19 Td (visibility for weeks) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 372.39 Td (No structured tracking of open vs. resolved status) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 337.29 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 350.49 Td (Housekeeping \(bins, sanitation\)) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 350.49 Td (Overflowing bins generate repeated, near-identical) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 341.29 Td (complaints) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 350.49 Td (No similarity detection to merge repeated reports) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 315.39 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 328.59 Td (Laboratory equipment) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 328.59 Td (Students may not know technical name of equipment) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 319.39 Td (or owning department) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 328.59 Td (Free-text descriptions are vague or technically inaccurate) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 293.49 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 306.69 Td (Infrastructure damage \(walls,) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 297.49 Td (doors, pathways\)) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 306.69 Td (Reported without enough visual or locational) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 170.00 297.49 Td (context) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 355.00 306.69 Td (Administrators cannot verify severity remotely) Tj ET
+q
+0.850 0.880 0.920 RG 0.40 w
+0.980 0.980 0.990 rg
+36.00 245.49 257.64 42.00 re
+B
+Q
+BT /F2 7.00 Tf 0.150 0.200 0.300 rg 42.00 279.49 Td (Students typically lack:) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 44.00 271.49 Td (- Knowledge of the correct department) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 44.00 263.49 Td (- Technical terminology for the issue) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 44.00 255.49 Td (- Visibility into complaint status) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 44.00 247.49 Td (- Confirmation the issue was actually repaired) Tj ET
+q
+0.850 0.880 0.920 RG 0.40 w
+0.980 0.980 0.990 rg
+301.64 245.49 257.64 42.00 re
+B
+Q
+BT /F2 7.00 Tf 0.150 0.200 0.300 rg 307.64 279.49 Td (Administrators typically lack:) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 309.64 271.49 Td (- Centralized visual evidence) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 309.64 263.49 Td (- Duplicate detection across reports) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 309.64 255.49 Td (- Department-wise workload visibility) Tj ET
+BT /F1 6.50 Tf 0.250 0.300 0.350 rg 309.64 247.49 Td (- Structured before/after repair verification) Tj ET
+q
+0.4 0.45 0.5 RG 0.5 w
+36.0 32 m 559.28 32 l S
+BT /F1 7.5 Tf 0.35 0.4 0.45 rg
+36.0 20 Td (CampusFix AI - Hackathon Innovation Proposal) Tj
+514.28 20 Td (Page 1 of 4) Tj
+ET Q
+endstream
+endobj
+
+8 0 obj
+<< /Length 9646 >>
+stream
+q
+0.070 0.230 0.420 rg
+36.00 795.89 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 799.39 Td (3) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 798.89 Td (The Solution: Dual-Engine AI Architecture) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 795.89 m 559.28 795.89 l S Q
+BT /F3 7.30 Tf 0.070 0.230 0.420 rg 36.00 780.89 Td ("CampusFix AI uses two cooperating engines: a Multimodal Visual Understanding & Incident Intelligence Engine,) Tj ET
+BT /F3 7.30 Tf 0.070 0.230 0.420 rg 36.00 772.89 Td (and an AI-Assisted Maintenance Workflow & Resolution Verification Engine.") Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 755.89 523.28 12.00 re
+f
+Q
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 42.00 758.39 Td (PILLAR A  -  MULTIMODAL VISUAL UNDERSTANDING & INCIDENT INTELLIGENCE) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 745.89 Td (1. Visual Problem Detection: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 745.89 Td (Student uploads photo/video. Vision model analyzes affected object, visible problem/damage, likely maintenance category, and supporting context) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 737.39 Td (\(e.g. ceiling fan -> damaged; tube light -> non-functional\). Discloses lighting/angle quality limits.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 719.89 Td (2. Room Scan Mode: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 719.89 Td (Single wide classroom/lab photo surfaces multiple candidate issues in one pass \(e.g. Room 204: broken fan, damaged desk, flickering light\).) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 711.39 Td (Student reviews and confirms before submission; no unconfirmed ticket spam.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 693.89 Td (3. Evidence Extraction \(Optional OCR\): ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 693.89 Td (Where legible, OCR identifies room numbers, block signage, and asset tags. Absent or illegible text is simply skipped  -  no hallucinations.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 676.39 Td (4. Duplicate Incident Detection: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 676.39 Td (Compares new incidents against open tickets using location, category, semantic similarity, and visual similarity. Flags 'Possible duplicate) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 667.89 Td (detected' to enable merging into existing incidents.) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 643.39 523.28 12.00 re
+f
+Q
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 42.00 645.89 Td (PILLAR B  -  AI-ASSISTED MAINTENANCE WORKFLOW & RESOLUTION VERIFICATION) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 633.39 Td (1. Intelligent Routing Agent: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 633.39 Td (Suggests department from classified category \(electrical -> Electrical Maint.; plumbing -> Plumbing; furniture -> Carpentry; IT -> IT Support;) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 624.89 Td (cleaning -> Housekeeping\). Fully confirmable by staff.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 607.39 Td (2. Maintenance Task Dispatcher: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 607.39 Td (Generates structured tasks: Incident ID, description, original photo, room location, suggested priority, and assigned staff.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 589.89 Td (3. Before/After Verification Agent \(Primary Innovation\): ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 589.89 Td (Original photo stored as 'before' state. Maintenance uploads 'after' photo upon repair. Vision model compares both: e.g. 'Resolution evidence) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 581.39 Td (appears consistent \(96%\)'. Staff confirms final closure.) Tj ET
+BT /F2 7.20 Tf 0.100 0.200 0.350 rg 40.00 563.89 Td (4. Resolution Evidence Store: ) Tj ET
+BT /F1 7.00 Tf 0.150 0.150 0.200 rg 40.00 563.89 Td (Persists before/after images, Incident ID, timestamps, assigned department, full audit trail, AI verification score, and human sign-off record.) Tj ET
+q
+0.070 0.350 0.450 rg
+36.00 540.39 523.28 12.00 re
+f
+Q
+BT /F2 7.50 Tf 1.000 1.000 1.000 rg 146.00 543.39 Td (AI VERIFICATION  ->  HUMAN CONFIRMATION  ->  VERIFIED RESOLVED) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 529.39 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 532.89 Td (4) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 532.39 Td (AI Agent & Tool-Calling Specification) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 529.39 m 559.28 529.39 l S Q
+q
+0.070 0.230 0.420 rg
+36.00 500.39 523.00 16.00 re
+f
+Q
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 40.00 505.39 Td (Agent / Tool) Tj ET
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 155.00 505.39 Td (Trigger) Tj ET
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 275.00 505.39 Td (Action) Tj ET
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 435.00 505.39 Td (Output) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 479.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 491.89 Td (vision.analyze_issue\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 491.89 Td (Student uploads image/video) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 491.89 Td (Analyzes visible objects & maintenance) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 482.89 Td (problems) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 491.89 Td (Candidate object + issue list +) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 482.89 Td (confidence) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 458.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 470.89 Td (incident.classify_issue\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 470.89 Td (Vision produces candidate issue) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 470.89 Td (Assigns maintenance category & suggests) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 461.89 Td (priority) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 470.89 Td (Category + priority suggestion) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 437.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 449.89 Td (incident.detect_duplicate\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 449.89 Td (New incident submitted) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 449.89 Td (Compares open incidents via location & visual) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 440.89 Td (similarity) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 449.89 Td (Duplicate flag + candidate matching) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 440.89 Td (incident) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 424.39 523.00 13.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 428.89 Td (routing.assign_department\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 428.89 Td (Issue category confirmed) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 428.89 Td (Suggests responsible maintenance department) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 428.89 Td (Suggested department record) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 403.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 415.89 Td (maintenance.dispatch_task\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 415.89 Td (Incident confirmed) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 415.89 Td (Creates structured maintenance task with) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 406.89 Td (evidence) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 415.89 Td (Maintenance task record &) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 406.89 Td (notifications) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 382.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 394.89 Td (vision.verify_repair\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 394.89 Td (Staff uploads after-repair image) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 394.89 Td (Compares before and after visual evidence) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 394.89 Td (AI-assisted resolution verification) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 385.89 Td (result) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 361.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 373.89 Td (incident.update_status\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 373.89 Td (Incident changes stage) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 373.89 Td (Transitions: Reported -> Assigned -> In) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 364.89 Td (Progress -> Verified) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 373.89 Td (Status updated & audit log) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 364.89 Td (persisted) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 340.39 523.00 21.00 re
+B
+Q
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 40.00 352.89 Td (analytics.generate_dashboard\(\)) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 155.00 352.89 Td (Dashboard request) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 352.89 Td (Aggregates open, in-progress, pending,) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 275.00 343.89 Td (resolved counts) Tj ET
+BT /F1 6.50 Tf 0.120 0.140 0.180 rg 435.00 352.89 Td (Live dashboard analytics data) Tj ET
+q
+0.950 0.750 0.500 RG 0.50 w
+1.000 0.970 0.940 rg
+36.00 321.39 523.28 13.00 re
+B
+Q
+BT /F3 6.80 Tf 0.600 0.300 0.000 rg 44.00 324.89 Td (Human-in-the-loop note: Low-confidence AI decisions involving classification, duplicate detection, routing, or verification are flagged for human review.) Tj ET
+q
+0.4 0.45 0.5 RG 0.5 w
+36.0 32 m 559.28 32 l S
+BT /F1 7.5 Tf 0.35 0.4 0.45 rg
+36.0 20 Td (CampusFix AI - Hackathon Innovation Proposal) Tj
+514.28 20 Td (Page 2 of 4) Tj
+ET Q
+endstream
+endobj
+
+9 0 obj
+<< /Length 10788 >>
+stream
+q
+0.070 0.230 0.420 rg
+36.00 795.89 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 799.39 Td (5) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 798.89 Td (Competitive Edge & Differentiation) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 795.89 m 559.28 795.89 l S Q
+q
+0.070 0.230 0.420 rg
+36.00 766.39 523.00 16.50 re
+f
+Q
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 40.00 771.89 Td (Dimension) Tj ET
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 155.00 771.89 Td (Traditional Complaint Portal) Tj ET
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 340.00 771.89 Td (CampusFix AI) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 753.39 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 757.69 Td (Reporting) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 757.69 Td (Manual form / verbal complaint) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 757.69 Td (Photograph the problem \(1-tap visual capture\)) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 740.39 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 744.69 Td (Problem description) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 744.69 Td (Free-text description \(vague or inaccurate\)) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 744.69 Td (AI-generated structured description & severity) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 727.39 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 731.69 Td (Department assignment) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 731.69 Td (Manual triage & routing delays) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 731.69 Td (AI-assisted, category-based auto-routing) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 705.49 523.00 21.90 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 718.69 Td (Duplicate complaints) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 718.69 Td (Multiple disconnected tickets for same physical) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 709.49 Td (issue) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 718.69 Td (Similarity-based duplicate detection & merge) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 692.49 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 696.79 Td (Visual evidence) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 696.79 Td (Often text-only; inspection blind) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 696.79 Td (Structured before & after visual evidence) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 679.49 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 683.79 Td (Maintenance tracking) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 683.79 Td (Manual follow-up & opaque status) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 683.79 Td (Structured status lifecycle with real-time feedback) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 666.49 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 670.79 Td (Resolution verification) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 670.79 Td (Usually assumed / checkbox checked) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 670.79 Td (AI-assisted image comparison + human confirmation) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 653.49 523.00 13.00 re
+B
+Q
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 40.00 657.79 Td (Dashboard) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 155.00 657.79 Td (Limited visibility / siloed spreadsheets) Tj ET
+BT /F1 6.70 Tf 0.120 0.140 0.180 rg 340.00 657.79 Td (Live incident, workload & resolution dashboard) Tj ET
+q
+0.930 0.940 0.960 rg
+36.00 636.49 523.28 11.00 re
+f
+Q
+BT /F2 6.80 Tf 0.400 0.450 0.500 rg 42.00 638.99 Td (Traditional:   REPORT  ->  TICKET  ->  WAIT  ->  FOLLOW UP) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 623.49 523.28 11.00 re
+f
+Q
+BT /F2 6.80 Tf 1.000 1.000 1.000 rg 42.00 625.99 Td (CampusFix AI:  SHOW  ->  UNDERSTAND  ->  ROUTE  ->  REPAIR  ->  VERIFY  ->  CLOSE) Tj ET
+q
+0.070 0.350 0.450 rg
+36.00 607.49 523.28 12.00 re
+f
+Q
+BT /F2 7.20 Tf 1.000 1.000 1.000 rg 116.00 610.49 Td (PRIMARY INNOVATION  -  AI-assisted before/after visual verification) Tj ET
+q
+0.700 0.820 0.950 RG 0.40 w
+0.950 0.970 1.000 rg
+36.00 594.49 523.28 11.00 re
+B
+Q
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 106.00 596.99 Td (SECONDARY INNOVATION  -  One classroom photograph can identify multiple candidate maintenance issues) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 583.49 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 586.99 Td (6) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 586.49 Td (Projected Campus Operational Impact) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 583.49 m 559.28 583.49 l S Q
+BT /F2 6.20 Tf 0.400 0.450 0.500 rg 36.00 569.49 Td (ILLUSTRATIVE PILOT TARGETS / MODELED METRICS  -  HYPOTHETICAL CAMPUS OF 5,000 STUDENTS, 250 STAFF) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 548.49 523.00 16.00 re
+f
+Q
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 40.00 553.49 Td (Metric) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 150.00 553.49 Td (Traditional Process) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 260.00 553.49 Td (CampusFix AI) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 400.00 553.49 Td (Potential Improvement) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 535.49 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 540.09 Td (Reporting effort) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 540.09 Td (Form fields / free text) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 540.09 Td (Single photograph) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 540.09 Td (Fewer steps per report  -  80% faster capture) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 514.69 523.00 20.80 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 527.09 Td (Duplicate volume) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 527.09 Td (Untracked / repetitive) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 527.09 Td (Similarity-based flagging) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 527.09 Td (Estimated 30%-50% reduction in redundant) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 518.19 Td (tickets) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 501.69 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 506.29 Td (Routing time) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 506.29 Td (Manual triage) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 506.29 Td (AI-assisted routing) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 506.29 Td (Immediate hand-off to correct maintenance dept) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 488.69 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 493.29 Td (Follow-up effort) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 493.29 Td (Phone calls / repeated visits) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 493.29 Td (Status dashboard) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 493.29 Td (Reduced inquiries; transparent live tracking) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 475.69 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 480.29 Td (Resolution evidence) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 480.29 Td (Rare / anecdotal) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 480.29 Td (Structured before/after evidence) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 480.29 Td (Consistent audit-grade photo capture) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 462.69 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 467.29 Td (Department visibility) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 467.29 Td (Siloed departmental logs) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 467.29 Td (Unified dashboard) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 467.29 Td (Improved cross-departmental accountability) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 449.69 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 454.29 Td (Department workload) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 150.00 454.29 Td (Not centrally tracked) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 260.00 454.29 Td (Live aggregation) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 400.00 454.29 Td (Optimal resource allocation & staffing insights) Tj ET
+BT /F3 6.40 Tf 0.450 0.500 0.550 rg 36.00 441.69 Td (Actual operational improvements must be validated through a real campus pilot. Figures represent modeled targets.) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 427.69 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 431.19 Td (7) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 430.69 Td (Presentation & Live Demonstration Blueprint) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 427.69000000000005 m 559.28 427.69000000000005 l S Q
+q
+0.700 0.820 0.950 RG 0.40 w
+0.960 0.980 1.000 rg
+36.00 402.69 523.28 12.00 re
+B
+Q
+BT /F3 7.20 Tf 0.070 0.230 0.420 rg 44.00 405.69 Td ("CampusFix AI doesn't just collect complaints. It creates evidence that a campus problem was actually solved.") Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 393.19 Td (0:00-0:30  -  The Problem: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 393.19 Td (Show broken classroom fan photograph. 'Campuses don't lack technicians; they lack visual connection between problem & workflow.') Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 377.19 Td (0:30-1:00  -  Live AI Vision: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 377.19 Td (Upload classroom shot. AI identifies: broken fan, damaged desk, flickering light. User clicks 'Confirm Issues'.) Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 361.19 Td (1:00-1:30  -  Automatic Routing: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 361.19 Td (Broken fan -> Electrical; damaged desk -> Maintenance; light -> Electrical. Structured incident tasks created.) Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 345.19 Td (1:30-2:00  -  Duplicate Detection: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 345.19 Td (Upload second photo of same fan. System displays 'Possible duplicate detected  -  Incident CF-001'. Click 'Merge'.) Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 329.19 Td (2:00-2:30  -  Before/After Verification: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 329.19 Td (BEFORE: damaged fan. AFTER: repaired fan. AI: 'Resolution evidence appears consistent \(96%\)' -> Human confirmation.) Tj ET
+BT /F2 6.80 Tf 0.070 0.230 0.420 rg 40.00 313.19 Td (2:30-3:00  -  Admin Dashboard: ) Tj ET
+BT /F1 6.60 Tf 0.150 0.150 0.200 rg 40.00 313.19 Td (Display live metrics: Open, Assigned, In Progress, Awaiting Verification, Verified Resolved, and dept workload.) Tj ET
+q
+0.4 0.45 0.5 RG 0.5 w
+36.0 32 m 559.28 32 l S
+BT /F1 7.5 Tf 0.35 0.4 0.45 rg
+36.0 20 Td (CampusFix AI - Hackathon Innovation Proposal) Tj
+514.28 20 Td (Page 3 of 4) Tj
+ET Q
+endstream
+endobj
+
+10 0 obj
+<< /Length 9481 >>
+stream
+q
+0.070 0.230 0.420 rg
+36.00 795.89 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 799.39 Td (8) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 798.89 Td (Judge Q&A Defense Sheet) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 795.89 m 559.28 795.89 l S Q
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 777.89 Td (Q: What if the AI incorrectly identifies a problem?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 770.39 Td (A: CampusFix uses confidence thresholds and human-in-the-loop review. Low-confidence results are flagged for confirmation.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 758.89 Td (Q: What if students upload irrelevant images / selfies?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 751.39 Td (A: An upfront vision filter checks campus infrastructure context. Irrelevant or suspicious submissions are rejected immediately.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 739.89 Td (Q: How does duplicate detection work?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 732.39 Td (A: Combines location context, issue category, semantic similarity, and visual embedding similarity to detect matching open tickets.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 720.89 Td (Q: How do you know the repair actually happened?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 713.39 Td (A: Staff must upload an after-repair photo. Multimodal Vision compares before vs after. Authorized staff make final closure.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 701.89 Td (Q: Can CampusFix integrate with an existing college ERP?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 694.39 Td (A: Yes. The architecture exposes REST APIs and webhooks for ERP integration \(SAP, Peoplesoft\). MVP runs standalone.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 682.89 Td (Q: Can AI automatically decide urgency?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 675.39 Td (A: AI suggests priority based on hazard detection \(e.g. exposed live wire\), but authorized staff confirm critical priorities.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 663.89 Td (Q: Do you need special hardware?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 656.39 Td (A: No. Zero Capex. Operates on existing smartphones, tablets, and desktop web browsers.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 644.89 Td (Q: Is this just a ticketing system?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 637.39 Td (A: No. Ticketing is only the workflow layer. The AI performs vision understanding, classification, deduplication, and verification.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 625.89 Td (Q: Do you need to train your own computer vision model?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 618.39 Td (A: No. The prototype utilizes multimodal LLMs \(Gemini Vision\) zero-shot. Production can fine-tune on campus imagery.) Tj ET
+BT /F2 6.60 Tf 0.100 0.200 0.350 rg 40.00 606.89 Td (Q: What if one photo contains multiple problems?) Tj ET
+BT /F1 6.40 Tf 0.250 0.300 0.350 rg 40.00 599.39 Td (A: Room Scan Mode detects multiple defects simultaneously and lets the user review and selectively log them.) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 586.89 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 590.39 Td (9) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 589.89 Td (Technical Architecture) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 586.89 m 559.28 586.89 l S Q
+q
+0.070 0.230 0.420 rg
+36.00 557.89 523.00 16.00 re
+f
+Q
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 40.00 562.89 Td (Layer) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 130.00 562.89 Td (Technology) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 300.00 562.89 Td (Layer) Tj ET
+BT /F2 6.90 Tf 1.000 1.000 1.000 rg 390.00 562.89 Td (Technology) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 544.89 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 549.49 Td (Frontend) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 130.00 549.49 Td (React + Vite + Tailwind CSS) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 300.00 549.49 Td (Authentication) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 390.00 549.49 Td (Role-Based Access Control \(RBAC\)) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 531.89 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 536.49 Td (Backend) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 130.00 536.49 Td (FastAPI \(Python\) or Node.js REST API) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 300.00 536.49 Td (Storage) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 390.00 536.49 Td (Secure Cloud Object Storage) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 518.89 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 523.49 Td (Database) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 130.00 523.49 Td (PostgreSQL / SQLite with vector indexing) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 300.00 523.49 Td (Notifications) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 390.00 523.49 Td (Web Push Notifications / Email Webhooks) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 505.89 523.00 13.00 re
+B
+Q
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 40.00 510.49 Td (AI Core) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 130.00 510.49 Td (Gemini Multimodal Vision API) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 300.00 510.49 Td (Integrations) Tj ET
+BT /F1 6.40 Tf 0.120 0.140 0.180 rg 390.00 510.49 Td (REST Webhooks for Campus ERP) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 487.89 256.64 12.00 re
+f
+Q
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 42.00 490.89 Td (10. Security & Privacy) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 40.00 480.89 Td (- Role-based access control \(RBAC\)) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 40.00 472.39 Td (- Secure HTTPS transmission & encryption) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 40.00 463.89 Td (- Minimal personal data collection \(only room/photo\)) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 40.00 455.39 Td (- Audit logs for all dispatch & closure actions) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 40.00 446.89 Td (- Human-in-the-loop review for all closures) Tj ET
+q
+0.070 0.230 0.420 rg
+302.64 487.89 256.64 12.00 re
+f
+Q
+BT /F2 7.00 Tf 1.000 1.000 1.000 rg 308.64 490.89 Td (11. MVP vs. Future Scope) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 306.64 480.89 Td (- MVP: Photo upload, Room Scan multi-detect) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 306.64 472.39 Td (- MVP: Auto-routing, deduplication, admin board) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 306.64 463.89 Td (- MVP: Before/after AI verification & sign-off) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 306.64 455.39 Td (- Future: WhatsApp chatbot integration) Tj ET
+BT /F1 6.30 Tf 0.200 0.250 0.300 rg 306.64 446.89 Td (- Future: Voice-based reporting & IoT telemetry) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 429.39 16.00 14.00 re
+f
+Q
+BT /F2 9.00 Tf 1.000 1.000 1.000 rg 40.50 432.89 Td (12) Tj ET
+BT /F2 10.50 Tf 0.070 0.230 0.420 rg 58.00 432.39 Td (Final Project Positioning) Tj ET
+q 0.07 0.23 0.42 RG 1 w
+58.0 429.39 m 559.28 429.39 l S Q
+q
+0.070 0.230 0.420 rg
+36.00 400.39 523.00 16.00 re
+f
+Q
+BT /F2 6.80 Tf 1.000 1.000 1.000 rg 40.00 405.39 Td (Attribute) Tj ET
+BT /F2 6.80 Tf 1.000 1.000 1.000 rg 125.00 405.39 Td (Specification) Tj ET
+BT /F2 6.80 Tf 1.000 1.000 1.000 rg 300.00 405.39 Td (Attribute) Tj ET
+BT /F2 6.80 Tf 1.000 1.000 1.000 rg 385.00 405.39 Td (Specification) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 387.39 523.00 13.00 re
+B
+Q
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 40.00 392.09 Td (Project Name) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 125.00 392.09 Td (CampusFix AI) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 300.00 392.09 Td (Hardware) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 385.00 392.09 Td (None  -  Zero Capex, Software Only) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 374.39 523.00 13.00 re
+B
+Q
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 40.00 379.09 Td (Full Title) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 125.00 379.09 Td (Visual Campus Maintenance & Resolution Intelligence) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 300.00 379.09 Td (AI Core) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 385.00 379.09 Td (Multimodal Vision + Workflow Automation) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+1.000 1.000 1.000 rg
+36.00 361.39 523.00 13.00 re
+B
+Q
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 40.00 366.09 Td (Tagline) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 125.00 366.09 Td ("Don't fill a complaint form. Show the problem.") Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 300.00 366.09 Td (Primary Differentiator) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 385.00 366.09 Td (AI-assisted before/after visual repair verification) Tj ET
+q
+0.850 0.870 0.900 RG 0.40 w
+0.950 0.960 0.980 rg
+36.00 348.39 523.00 13.00 re
+B
+Q
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 40.00 353.09 Td (Domain) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 125.00 353.09 Td (Campus Infrastructure & Student Experience) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 300.00 353.09 Td (Theme) Tj ET
+BT /F1 6.30 Tf 0.120 0.140 0.180 rg 385.00 353.09 Td (Reimagining the Smart Campus) Tj ET
+q
+0.070 0.230 0.420 rg
+36.00 329.39 523.28 13.00 re
+f
+Q
+BT /F3 6.60 Tf 1.000 1.000 1.000 rg 54.00 332.89 Td ("CampusFix AI turns a campus from a place where problems are reported into a place where problems become measurable, actionable, and verifiably resolved.") Tj ET
+q
+0.4 0.45 0.5 RG 0.5 w
+36.0 32 m 559.28 32 l S
+BT /F1 7.5 Tf 0.35 0.4 0.45 rg
+36.0 20 Td (CampusFix AI - Hackathon Innovation Proposal) Tj
+514.28 20 Td (Page 4 of 4) Tj
+ET Q
+endstream
+endobj
+
+11 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+
+12 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+
+14 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-BoldOblique >>
+endobj
+
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000133 00000 n 
+0000000299 00000 n 
+0000000465 00000 n 
+0000000631 00000 n 
+0000000798 00000 n 
+0000011734 00000 n 
+0000021432 00000 n 
+0000032273 00000 n 
+0000041807 00000 n 
+0000041878 00000 n 
+0000041954 00000 n 
+0000042033 00000 n 
+
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+42116
+%%EOF

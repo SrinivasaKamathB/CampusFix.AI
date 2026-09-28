@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusFix AI — Hackathon Presentation Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0B0F19;
+      color: #E2E8F0;
+      user-select: none;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-box {
+      box-shadow: 0 0 50px -10px rgba(56, 189, 248, 0.15);
+    }
+  </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col justify-between p-6 md:p-10 relative">
+
+  <!-- Background decorative glows -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center z-10">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+        <i class="fa-solid fa-camera-viewfinder text-lg"></i>
+      </div>
+      <div>
+        <h1 class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+          CampusFix <span class="px-2 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full">AI</span>
+        </h1>
+        <p class="text-xs text-slate-400">Reimagining Smart Campus Infrastructure</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <span id="slideIndicator" class="text-sm font-mono text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/60">
+        Slide 1 / 8
+      </span>
+      <button onclick="toggleFullscreen()" class="px-3 py-1.5 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg border border-slate-700 transition">
+        <i class="fa-solid fa-expand mr-1"></i> Fullscreen
+      </button>
+    </div>
+  </header>
+
+  <!-- Slide Canvas -->
+  <main class="flex-1 flex items-center justify-center relative z-10 my-4 max-w-6xl mx-auto w-full">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide active flex-col items-center text-center justify-center gap-6 w-full">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+        <i class="fa-solid fa-sparkles"></i> Hackathon Innovation Proposal
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">
+        CampusFix <span class="gradient-text">AI</span>
+      </h1>
+      <p class="text-2xl md:text-3xl text-slate-300 font-medium max-w-3xl">
+        "Don't fill a complaint form. <span class="text-white underline decoration-blue-500 decoration-wavy underline-offset-8">Show the problem.</span>"
+      </p>
+      <p class="text-slate-400 max-w-2xl text-base md:text-lg">
+        Visual Campus Maintenance & Resolution Intelligence System. Turning physical maintenance from an opaque black box into an evidence-based digital lifecycle.
+      </p>
+      <div class="grid grid-cols-3 gap-4 max-w-xl w-full mt-4 text-left">
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-semibold uppercase">Hardware</p>
+          <p class="text-sm font-bold text-white mt-0.5">Zero Capex (Software)</p>
+        </div>
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-semibold uppercase">AI Core</p>
+          <p class="text-sm font-bold text-white mt-0.5">Gemini Multimodal</p>
+        </div>
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-semibold uppercase">Verification</p>
+          <p class="text-sm font-bold text-white mt-0.5">Before / After AI</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-rose-400 uppercase tracking-wider">
+        <i class="fa-solid fa-triangle-exclamation"></i> The Real Campus Nightmare
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        Campuses Don't Lack Staff.<br><span class="text-slate-400">They Lack Visual Intelligence.</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
+        <div class="p-6 bg-slate-900/80 rounded-2xl border border-rose-500/20 glow-box">
+          <h3 class="text-lg font-bold text-rose-300 flex items-center gap-2 mb-3">
+            <i class="fa-solid fa-file-circle-xmark"></i> The Student Friction
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
+              <span>Tedious 12-field complaint forms asking for equipment codes nobody knows.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
+              <span>Uncertain routing: Is a leaking projector water, electrical, or IT?</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-rose-400 mt-1"></i>
+              <span>Zero feedback or status updates: complaints vanish into a black hole.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-slate-900/80 rounded-2xl border border-amber-500/20 glow-box">
+          <h3 class="text-lg font-bold text-amber-300 flex items-center gap-2 mb-3">
+            <i class="fa-solid fa-boxes-stacked"></i> The Admin & Staff Gridlock
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-amber-400 mt-1"></i>
+              <span><strong>Duplicate ticket storms:</strong> 15 students report the exact same leaking washroom tap.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-amber-400 mt-1"></i>
+              <span>Staff arrive blind without knowing what tools or replacement parts are required.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-xmark text-amber-400 mt-1"></i>
+              <span><strong>The "Phantom Resolution":</strong> Tickets marked 'Done' without any physical proof.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: THE PIPELINE -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-blue-400 uppercase tracking-wider">
+        <i class="fa-solid fa-diagram-project"></i> Complete Evidence Lifecycle
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        From Single Snap to <span class="gradient-text">Verifiable Fix</span>
+      </h2>
+      <div class="grid grid-cols-5 gap-3 mt-4 text-center">
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-400 uppercase">Step 1</span>
+          <p class="font-bold text-sm text-white mt-1">1-Tap Photo</p>
+          <p class="text-xs text-slate-400 mt-1">Zero form filling; snap from the doorway</p>
+        </div>
+
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-400 uppercase">Step 2</span>
+          <p class="font-bold text-sm text-white mt-1">Vision AI</p>
+          <p class="text-xs text-slate-400 mt-1">Detects objects, defects & priority instantly</p>
+        </div>
+
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-route"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-400 uppercase">Step 3</span>
+          <p class="font-bold text-sm text-white mt-1">Auto-Route & Deduplicate</p>
+          <p class="text-xs text-slate-400 mt-1">Routes to Electrical/Plumbing & flags duplicates</p>
+        </div>
+
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-400 uppercase">Step 4</span>
+          <p class="font-bold text-sm text-white mt-1">Fix & After Photo</p>
+          <p class="text-xs text-slate-400 mt-1">Staff executes repair & uploads "After" shot</p>
+        </div>
+
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-indigo-500/20 glow-box flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-badge-check"></i>
+          </div>
+          <span class="text-xs font-bold text-indigo-400 uppercase">Step 5</span>
+          <p class="font-bold text-sm text-white mt-1">AI Verification</p>
+          <p class="text-xs text-slate-400 mt-1">Before vs. After diffing + admin signoff</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: HERO 1 - ROOM SCAN -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-purple-400 uppercase tracking-wider">
+        <i class="fa-solid fa-expand"></i> Standout Innovation #1
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        "Room Scan" Mode: <span class="gradient-text">One Photo, Every Defect</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2 items-center">
+        <div class="p-6 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-4">
+          <p class="text-slate-300 leading-relaxed text-sm">
+            Instead of logging into an app 3 separate times to report 3 things in the same room, a student or faculty member snaps a single wide shot from the door.
+          </p>
+          <div class="space-y-2.5">
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-blue-500/30 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-fan text-blue-400"></i>
+                <span class="text-xs font-medium text-white">Broken Fan (Blades warped)</span>
+              </div>
+              <span class="text-[10px] font-bold bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">Electrical</span>
+            </div>
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-amber-500/30 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-chair text-amber-400"></i>
+                <span class="text-xs font-medium text-white">Cracked Desk Leg (Safety hazard)</span>
+              </div>
+              <span class="text-[10px] font-bold bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">Carpentry</span>
+            </div>
+            <div class="p-3 bg-slate-800/80 rounded-xl border border-emerald-500/30 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-lightbulb text-emerald-400"></i>
+                <span class="text-xs font-medium text-white">Tube Light Flickering</span>
+              </div>
+              <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Electrical</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl border border-indigo-500/30 glow-box">
+          <h4 class="font-bold text-white text-base mb-2">Why This Blows Judges Away:</h4>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Demonstrates <strong>spatial multi-object understanding</strong> rather than trivial single-class image classification. 
+          </p>
+          <div class="p-3 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-indigo-300 text-xs font-medium">
+            <i class="fa-solid fa-check-circle mr-1"></i> User retains human-in-the-loop control to confirm or deselect detected items before tickets are dispatched.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: HERO 2 - BEFORE / AFTER VERIFICATION -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+        <i class="fa-solid fa-shield-check"></i> Standout Innovation #2 (The Killer Feature)
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        Before & After <span class="gradient-text">AI Verification Loop</span>
+      </h2>
+      <p class="text-slate-400 max-w-2xl text-sm">
+        Eliminates the "phantom closure" problem where complaints are marked resolved without physical work.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
+        <div class="p-5 bg-slate-900/80 rounded-2xl border border-slate-800">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-bold uppercase text-rose-400">Step A: The Incident (Before)</span>
+            <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-mono">CF-104</span>
+          </div>
+          <div class="h-32 bg-slate-800/80 rounded-xl flex items-center justify-center border border-slate-700/50 text-slate-400 text-xs">
+            [ Damaged Fan Photo Evidence ]
+          </div>
+          <p class="text-xs text-slate-300 mt-3 font-mono">Vision analysis: Damaged blades, hanging mount, non-functional.</p>
+        </div>
+
+        <div class="p-5 bg-slate-900/80 rounded-2xl border border-emerald-500/30 glow-box">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-bold uppercase text-emerald-400">Step B: The Repair (After)</span>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono">AI Verified</span>
+          </div>
+          <div class="h-32 bg-slate-800/80 rounded-xl flex items-center justify-center border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+            [ Repaired Fan Photo Evidence ]
+          </div>
+          <div class="mt-3 p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/20 flex items-center justify-between text-xs text-emerald-300 font-semibold">
+            <span>Resolution Evidence Consistent</span>
+            <span class="font-mono text-emerald-400">96% Conf.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: HERO 3 - DEDUPLICATION & ROUTING -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-wider">
+        <i class="fa-solid fa-code-merge"></i> Smart System Intelligence
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        Duplicate Fusion & <span class="gradient-text">Auto-Routing</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
+        <div class="p-6 bg-slate-900/80 rounded-2xl border border-slate-800">
+          <h3 class="text-lg font-bold text-amber-300 flex items-center gap-2 mb-2">
+            <i class="fa-solid fa-clone"></i> Similarity Deduplication
+          </h3>
+          <p class="text-xs text-slate-300 mb-4">
+            Stops 15 duplicate complaints when a washroom pipe bursts. Compares location, issue category, semantic text, and visual similarity.
+          </p>
+          <div class="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-200 text-xs">
+            <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-bell"></i> "Possible Duplicate Detected"</p>
+            <p class="text-[11px] text-amber-300/80 mt-1">Incident #CF-001 already open in Block B / Room 204. Tap to Upvote & Subscribe instead of duplicating!</p>
+          </div>
+        </div>
+
+        <div class="p-6 bg-slate-900/80 rounded-2xl border border-slate-800">
+          <h3 class="text-lg font-bold text-blue-300 flex items-center gap-2 mb-2">
+            <i class="fa-solid fa-compass"></i> Zero-Shot Department Triage
+          </h3>
+          <p class="text-xs text-slate-300 mb-4">
+            Eliminates misrouted tickets bouncing between departments.
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs font-medium text-slate-200">
+            <div class="p-2 bg-slate-800/80 rounded-lg border border-slate-700/60">⚡ Electrical Maint.</div>
+            <div class="p-2 bg-slate-800/80 rounded-lg border border-slate-700/60">🚰 Plumbing Dept.</div>
+            <div class="p-2 bg-slate-800/80 rounded-lg border border-slate-700/60">🖥️ IT & AV Support</div>
+            <div class="p-2 bg-slate-800/80 rounded-lg border border-slate-700/60">🧹 Housekeeping</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: TECH STACK & FEASIBILITY -->
+    <div class="slide flex-col justify-center gap-6 w-full">
+      <div class="flex items-center gap-2 text-xs font-semibold text-blue-400 uppercase tracking-wider">
+        <i class="fa-solid fa-server"></i> Scalable & Pragmatic
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        Zero Capex, <span class="gradient-text">Software-Only Architecture</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2 text-xs">
+        <div class="p-5 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-3">
+          <div class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-sky-400"></i> No Proprietary Hardware
+          </div>
+          <p class="text-slate-300 leading-relaxed text-xs">
+            Operates entirely on existing student smartphones and campus web browsers. No expensive IoT cameras, specialized sensors, or hardware roll-out required.
+          </p>
+          <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/60 text-slate-300 text-[11px]">
+            ⚡ <strong>Deployment Time:</strong> Instantly accessible as a Progressive Web App across any university.
+          </div>
+        </div>
+
+        <div class="p-5 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-3">
+          <div class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-plug text-emerald-400"></i> API-First ERP Integration
+          </div>
+          <p class="text-slate-300 leading-relaxed text-xs">
+            Functions as a standalone system or connects via RESTful webhooks to existing university ERP platforms (SAP, PeopleSoft, custom portals) without disruption.
+          </p>
+          <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700/60 text-slate-300 text-[11px]">
+            🔗 <strong>Interoperability:</strong> Dispatches tasks and syncs status bi-directionally with legacy ticketing.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: REAL IMPACT & CLOSING -->
+    <div class="slide flex-col justify-center gap-6 w-full text-center items-center">
+      <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+        <i class="fa-solid fa-award"></i> The Institutional Value
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white max-w-3xl">
+        From Reactive Grievances to <span class="gradient-text">Verifiable Resolution</span>
+      </h2>
+      
+      <div class="grid grid-cols-3 gap-4 max-w-3xl w-full mt-3 text-left">
+        <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800">
+          <div class="text-2xl font-black text-sky-400">80%</div>
+          <div class="text-xs font-bold text-white mt-1">Faster Reporting</div>
+          <div class="text-[11px] text-slate-400 mt-1">10-second photo snap replaces tedious forms.</div>
+        </div>
+
+        <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800">
+          <div class="text-2xl font-black text-amber-400">40%</div>
+          <div class="text-xs font-bold text-white mt-1">Fewer Redundant Tickets</div>
+          <div class="text-[11px] text-slate-400 mt-1">Spatial & semantic duplicate clustering.</div>
+        </div>
+
+        <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800">
+          <div class="text-2xl font-black text-emerald-400">100%</div>
+          <div class="text-xs font-bold text-white mt-1">Verifiable Proof</div>
+          <div class="text-[11px] text-slate-400 mt-1">Audit-grade before/after visual logs.</div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-4 bg-slate-900/60 rounded-xl border border-slate-800/80 max-w-2xl text-slate-300 text-xs italic">
+        "CampusFix AI turns physical campus maintenance into an evidence-based, transparent digital lifecycle."
+      </div>
+
+      <div class="text-lg font-bold text-white tracking-wide mt-2">
+        Thank You! Ready for Questions.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="flex justify-between items-center z-10 border-t border-slate-800/80 pt-4 max-w-6xl mx-auto w-full">
+    <div class="text-xs text-slate-500 flex items-center gap-2">
+      <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-slate-400 font-mono text-[10px]">&larr;</kbd>
+      <kbd class="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-slate-400 font-mono text-[10px]">&rarr;</kbd>
+      <span>Use arrow keys to navigate</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button onclick="prevSlide()" class="px-4 py-2 bg-slate-800/90 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl border border-slate-700/60 transition flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i> Previous
+      </button>
+      <button onclick="nextSlide()" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition flex items-center gap-2">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const indicator = document.getElementById('slideIndicator');
+
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      indicator.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>
