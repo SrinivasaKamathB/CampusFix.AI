@@ -92,3 +92,18 @@ def download_pitch_guide():
         )
     return {"error": "File not found"}
 
+<<<<<<< HEAD
+=======
+@app.get("/download/code")
+@app.get("/download/zip")
+def download_complete_code():
+    zip_path = Path(__file__).resolve().parent.parent.parent / "campusfix-ai-complete.zip"
+    if zip_path.exists():
+        return FileResponse(
+            path=str(zip_path),
+            filename="campusfix-ai-complete.zip",
+            media_type="application/zip"
+        )
+    return {"error": "Archive not found"}
+
+>>>>>>> 415013a (Update logo design, README documentation, and asset packages)

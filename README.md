@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CampusFix AI
 
 ## AI-Powered Visual Campus Maintenance and Repair Verification
@@ -471,10 +472,76 @@ Smartphone / Image
         |
         v
 Maintenance Workflow
+=======
+# 🏛️ CampusFix AI
+### Visual Campus Maintenance & Resolution Intelligence System
+*"Don't fill a complaint form. Show the problem."*
+
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?style=flat&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=flat&logo=Python&logoColor=white)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+---
+
+## 📌 Executive Summary
+
+Educational institutions manage extensive physical infrastructure—lecture halls, labs, libraries, washrooms, and hostels. Physical maintenance issues (broken ceiling fans, flickering tube lights, water leaks, shattered windows, and damaged desks) occur on a daily basis.
+
+Current complaint portals fail because they rely on manual text descriptions, guess-work categorization, and simple checkboxes for resolution with zero proof.
+
+**CampusFix AI** introduces an **evidence-based visual lifecycle**:
+1. **Show the problem**: Students snap a single photo instead of filling out a tedious 10-field form.
+2. **AI Vision & Auto-Triage**: Multimodal Vision extracts the affected object, visible damage, safety score, and routes the ticket to the correct department (Electrical, Plumbing, IT, Carpentry, Housekeeping).
+3. **Room Scan Mode**: Audits multiple defects in a classroom simultaneously from a single wide photograph.
+4. **Duplicate Ticket Fusion**: Automatically detects redundant complaints for the same issue and prompts upvoting instead of queue clutter.
+5. **Before/After AI Verification**: Technicians upload an "After" photo of the completed repair. The Vision AI performs comparative visual diffing to verify resolution consistency before the admin signs off.
+6. **Campus Digital Twin**: Interactive 2D floor blueprint of Academic Blocks with live pulsing status beacons for rapid dispatch.
+
+---
+
+## 🌟 Hero Features
+
+* 🔍 **Zero-Friction Vision Reporting**: Snap an image or record a voice note; AI automatically determines category, priority, and problem description.
+* ⚡ **Room Scan Mode**: One wide photo parses and logs multiple maintenance defects in a single pass.
+* ⟷ **Interactive Before/After Slider**: Draggable split-slider and side-by-side view with Defect Delta bounding box overlays to inspect repair quality.
+* 🗺️ **Campus Digital Twin**: Real-time floorplan visualization (Block B & Block C) mapping active incidents with color-coded severity beacons.
+* 🏷️ **QR Plaque Scanner**: Rapid location binding by scanning classroom doorway plaques or NFC tags.
+* 🛡️ **No Phantom Closures**: Eliminates fake closures with automated AI consistency verification between initial defect and final repair photos.
+
+---
+
+## 🏗️ Architecture
+
+```
+┌────────────────────────────────────────────────────────┐
+│                   STUDENT / STAFF WEB APP              │
+│       (Responsive Mobile Web / Desktop Dashboard)       │
+└───────────────────────────┬────────────────────────────┘
+                            │
+┌───────────────────────────▼────────────────────────────┐
+│                    API GATEWAY (FastAPI)               │
+└─────────────┬────────────────────────────┬─────────────┘
+              │                            │
+┌─────────────▼───────────────┐ ┌──────────▼───────────────┐
+│  ENGINE A: VISUAL PERCEPTION│ │ ENGINE B: WORKFLOW &     │
+│  & SCENE INTELLIGENCE       │ │ RESOLUTION VERIFICATION  │
+├─────────────────────────────┤ ├──────────────────────────┤
+│ • Zero-Shot Defect Parsing  │ │ • Category Auto-Routing  │
+│ • Room Scan (Multi-Defect)  │ │ • Similarity Deduplication│
+│ • Safety & Hazard Scoring   │ │ • Before/After AI Diff   │
+│ • QR Plaque Location Binder │ │ • Digital Twin Telemetry │
+└─────────────┬───────────────┘ └──────────┬───────────────┘
+              │                            │
+┌─────────────▼────────────────────────────▼─────────────┐
+│           INCIDENT & RESOLUTION EVIDENCE DATABASE      │
+│                     (SQLite / SQLAlchemy)              │
+└────────────────────────────────────────────────────────┘
+>>>>>>> 415013a (Update logo design, README documentation, and asset packages)
 ```
 
 ---
 
+<<<<<<< HEAD
 ## Getting Started
 
 ### Prerequisites
@@ -491,11 +558,21 @@ A Gemini API key can be configured when external Gemini-powered analysis is requ
 ```bash
 ### Clone the Repository
 
+=======
+## 🚀 Quick Start Guide
+
+### Prerequisites
+- Python 3.10+
+- Git
+
+### 1. Clone the Repository
+>>>>>>> 415013a (Update logo design, README documentation, and asset packages)
 ```bash
 git clone https://github.com/SrinivasaKamathB/CampusFix.AI.git
 cd CampusFix.AI
 ```
 
+<<<<<<< HEAD
 ### 2. Create a Virtual Environment
 
 #### Windows PowerShell
@@ -790,12 +867,109 @@ Verify
   |
   v
 Resolve
+=======
+### 2. Set Up Virtual Environment & Dependencies
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Configure Environment Variables (Optional)
+```bash
+# If you have a Gemini API key for live multimodal processing:
+export GEMINI_API_KEY="your_api_key_here"
+
+# (If no key is provided, CampusFix AI automatically runs with high-fidelity simulated vision models for offline demos)
+```
+
+### 4. Run the Application
+```bash
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+Open your browser and navigate to:
+👉 **`http://localhost:8000`**
+
+---
+
+## 👥 Collaborator Workflow (For Team Members)
+
+To make edits and contribute to the web app:
+
+1. **Clone the repo** onto your machine:
+   ```bash
+   git clone https://github.com/SrinivasaKamathB/CampusFix.AI.git
+   ```
+2. **Open in VS Code**:
+   ```bash
+   code CampusFix.AI
+   ```
+3. **Run locally** following the Quick Start steps above.
+4. **Make changes** to the frontend (`backend/app/static/index.html`) or backend (`backend/app/`).
+5. **Commit and push** back to GitHub:
+   ```bash
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+   ```
+   *(Note: Ensure your GitHub account is invited as a Collaborator in repo **Settings → Collaborators**)*.
+
+---
+
+## 📁 Project Directory Structure
+
+```
+CampusFix.AI/
+├── README.md                      # Project documentation and quickstart
+├── start.sh                       # One-click start script
+├── backend/
+│   ├── Dockerfile                 # Containerized deployment spec
+│   ├── Procfile                   # Cloud platform process file
+│   ├── requirements.txt           # Python backend dependencies
+│   ├── run.sh                     # Launch runner
+│   ├── test_api.py                # Automated backend test suite
+│   └── app/
+│       ├── main.py                # FastAPI endpoints & static routing
+│       ├── models.py              # SQLite ORM models
+│       ├── schemas.py             # Pydantic validation schemas
+│       ├── seed.py                # Campus asset and sample ticket seeder
+│       ├── services/
+│       │   ├── vision_service.py  # Multimodal defect & verification engine
+│       │   └── routing_service.py # Department assignment logic
+│       └── static/
+│           └── index.html         # Single-page web dashboard & mobile UI
+├── demo_assets/                   # Sample defect images and asset SVGs
+└── docs/                          # Presentation slides, overview & pitch deck
+    ├── CampusFix_AI_Presentation.html
+    ├── CampusFix_AI_Project_Overview.md
+    └── CampusFix_AI_Judge_Pitch.md
+>>>>>>> 415013a (Update logo design, README documentation, and asset packages)
 ```
 
 ---
 
+<<<<<<< HEAD
 ## License
 
 This project is developed as an academic and portfolio prototype.
 
 A specific open-source license should only be added if the repository is intentionally being released under that license.
+=======
+## 🌐 Deployment Options
+
+### Render (Recommended Free Cloud Host)
+1. Sign up on [Render.com](https://render.com) and create a **New Web Service**.
+2. Connect your GitHub repository: `CampusFix.AI`.
+3. Configure the service:
+   - **Environment**: `Python 3`
+   - **Root Directory**: `backend`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+4. Deploy! Your app will be live at `https://<your-service>.onrender.com`.
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
+>>>>>>> 415013a (Update logo design, README documentation, and asset packages)
