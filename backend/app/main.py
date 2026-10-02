@@ -1,8 +1,15 @@
+import sys
 import os
+from pathlib import Path
+
+# Ensure backend root is always in sys.path
+backend_root = Path(__file__).resolve().parent.parent
+if str(backend_root) not in sys.path:
+    sys.path.insert(0, str(backend_root))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from pathlib import Path
 
 from app.config import DEMO_ASSETS_DIR
 from app.database import init_db
@@ -92,8 +99,6 @@ def download_pitch_guide():
         )
     return {"error": "File not found"}
 
-<<<<<<< HEAD
-=======
 @app.get("/download/code")
 @app.get("/download/zip")
 def download_complete_code():
@@ -105,5 +110,3 @@ def download_complete_code():
             media_type="application/zip"
         )
     return {"error": "Archive not found"}
-
->>>>>>> 415013a (Update logo design, README documentation, and asset packages)
